@@ -1,0 +1,25 @@
+### Work Note ##########################################################################################
+- AD Account Information
+Username: ===USERNAME===
+OU: ===OU===
+Groups:
+===ADGROUPS===
+
+- Exchange Information
+Email Address: ===EMAILADDRESS===
+Contact for: ===CONTACTFOR===
+Mailbox Claim: ===MAILBOXCLAIM===
+Distributions:
+===DISTRIBUTIONS===
+Resources:
+===RESOURCES===
+Aliases:
+===ALIASES===
+
+
+### Customer Visible Note ##############################################################################
+===NAME==='s DSA account (===USERNAME===) has been disabled and scheduled for deletion in 60 days. DSA Exchange mailbox claim and aliases, if any, have been deleted and user has been removed from all DSA Exchange groups.
+               
+If this request was in error, please reply to this email to reopen the request or call us at 979-862-7990 to restore the account.
+
+########################################################################################################
