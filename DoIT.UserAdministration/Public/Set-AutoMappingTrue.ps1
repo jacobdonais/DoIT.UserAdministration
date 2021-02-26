@@ -9,16 +9,10 @@
     3. Add all mailboxes back with full permissions and set the automap flag to true
 
 .INPUTS
+    NetID
 
 .OUTPUTS
-
-.NOTES
-
-Author: 
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    None
 
 #>
 

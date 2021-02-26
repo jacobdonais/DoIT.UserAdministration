@@ -6,16 +6,10 @@
     The New-TAMUMailbox function will claim a mailbox and add default and optional external addresses.
 
 .INPUTS
+    UIN, UserName, EmailDomain, Department
 
 .OUTPUTS
-
-.NOTES
-
-Author: Jacob Donais
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    None
 
 #>
 
@@ -97,13 +91,27 @@ Function New-TAMUMailbox {
 
     BEGIN {
         Enter-TAMUGateway -ErrorAction Stop
-        $GatewayPath = "https://gateway.tamu.edu/settings/proxy/exchange"
     }
 
     PROCESS {
+        # Step 0: Confirm there is no mailbox claim
+        $MailboxClaims = Get-TAMUMailboxClaims -UIN $UIN
+        if ($MailboxClaims) {
+            if ($MailboxClaims.MailboxClaims) {
+                if ($MailboxClaims.MailboxClaims -ne "There are no Mailbox Claims for this user.") {
+                    throw "User already has a mailbox claim"
+                }
+            }
+        }
+        else {
+            throw "Failed to get Mailbox claims"
+        }
+
         # Step 1: add the claim
         Write-Verbose "..Claiming mailbox with Add-TAMUMailboxClaim"
-        Add-TAMUMailboxClaim -UIN $UIN -Department $Department
+        if (!(Add-TAMUMailboxClaim -UIN $UIN -Department $Department)) {
+            throw "Failed to add Mailbox"
+        }
         
 
         # Step 2: Confirm the claim
@@ -134,7 +142,9 @@ Function New-TAMUMailbox {
 
         # Step 3: Add dsa address
         Write-Verbose "..Adding dsa email address"
-        Add-TAMUExternalAddresses -UIN $UIN -UserName $UserName -Default
+        if (!(Add-TAMUExternalAddresses -UIN $UIN -UserName $UserName -Default)) {
+            throw "Failed to add DSA email address"
+        }
 
         # Step 4: Confirm email address
         Write-Verbose "..Confirming DSA email address"
@@ -161,7 +171,9 @@ Function New-TAMUMailbox {
         if ($EmailDomain -ne "dsa.tamu.edu") {
             # Step 5: Add optional email domain
             Write-Verbose "..Adding optional email address"
-            Add-TAMUExternalAddresses -UIN $UIN -UserName $UserName -EmailDomain $EmailDomain -Default
+            if (!(Add-TAMUExternalAddresses -UIN $UIN -UserName $UserName -EmailDomain $EmailDomain -Default)) {
+                throw "Failed to add optional email address"
+            }
 
             # Step 6: Confirm email address
             Write-Verbose "..Confirming optional email address"

@@ -6,16 +6,10 @@
     The Remove-TAMUDistributionGroups function removes a user from one or more distribution lists.
 
 .INPUTS
+    UIN, DistributionList (DSA - DL * -or- resource@department.tamu.edu)
 
 .OUTPUTS
-
-.NOTES
-
-Author: Jacob Donais
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    Booleon
 
 #>
 
@@ -116,6 +110,8 @@ Function Remove-TAMUDistributionGroups {
                 else {
                     Write-Verbose "......Found; $DistributionList already deselected"
                 }
+
+                Write-Output "Removed $DistributionList"
             }
             else {
                 throw "$DistributionList was not found"

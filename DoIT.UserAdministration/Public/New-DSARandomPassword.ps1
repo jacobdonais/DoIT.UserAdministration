@@ -6,16 +6,10 @@
     The New-DSARandomPassword function returns a random password.
 
 .INPUTS
+    None
 
 .OUTPUTS
-
-.NOTES
-
-Author: 
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    Random DSA Approved Password
 
 #>
 

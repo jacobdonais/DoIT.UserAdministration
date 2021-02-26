@@ -6,16 +6,10 @@
     The Get-TAMUMailboxDetails function will return the mailbox details from Exchange Management.
 
 .INPUTS
+    UIN
 
 .OUTPUTS
-
-.NOTES
-
-Author: Jacob Donais
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    Mailbox Details
 
 #>
 
@@ -55,7 +49,7 @@ Function Get-TAMUMailboxDetails {
         ### Step 2: Get Mailbox Details ###
         Write-Verbose "..Getting Mailbox Details"
         $MailboxDetails = (Find-SeElement -Driver $Global:Driver -XPath "/html/body/div/div[2]/div[2]/div[1]/dl[2]").Text
-        if ($MailboxDetails -eq $null) { $MailboxDetails = "User has no mailbox" }
+        if ($null -eq $MailboxDetails) { $MailboxDetails = "User has no mailbox" }
         if ($MailboxDetails -ne "User has no mailbox") {
             Write-Verbose "....Found a mailbox"
             $ret.DiskUsage = (Find-SeElement -Driver $Global:Driver -XPath "/html/body/div/div[2]/div[2]/div[1]/dl[2]/dd[1]")[0].Text

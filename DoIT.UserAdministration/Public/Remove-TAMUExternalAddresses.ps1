@@ -6,16 +6,10 @@
     The Remove-TAMUExternalAddresses function removes an external address.
 
 .INPUTS
+    UIN, Email
 
 .OUTPUTS
-
-.NOTES
-
-Author: Jacob Donais
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    Booleon
 
 #>
 
@@ -70,6 +64,7 @@ Function Remove-TAMUExternalAddresses {
         (Find-SeElement -Driver $Global:Driver -XPath "/html/body/div/div[2]/div[1]").Text
         if ((Find-SeElement -Driver $Global:Driver -XPath "/html/body/div/div[2]/div[1]").Text -eq "Address $Email removed from account") {
             Write-Verbose "Success....Update found"
+            Write-Output "Removed external address $Email"
             return $true
         }
         Write-Verbose "Failed....Update not found"

@@ -7,16 +7,10 @@
     or more user accounts.
 
 .INPUTS
+    NetID
 
 .OUTPUTS
-
-.NOTES
-
-Author: 
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    Calendar Folder Permission
 
 #>
 

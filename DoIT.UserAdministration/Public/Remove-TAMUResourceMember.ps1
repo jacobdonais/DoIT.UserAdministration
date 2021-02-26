@@ -6,16 +6,10 @@
     The Remove-TAMUResourceMember function removes a user from a shared mailbox in EAC.
 
 .INPUTS
+    NetID, Resource
 
 .OUTPUTS
-
-.NOTES
-
-Author: 
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    None
 
 #>
 

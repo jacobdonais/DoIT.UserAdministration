@@ -6,16 +6,10 @@
     The Get-TAMUUserResourceMembership function returns all shared mailboxes for a user in EAC.
 
 .INPUTS
+    NetID
 
 .OUTPUTS
-
-.NOTES
-
-Author: 
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    TAMU Resource Membership
 
 #>
 

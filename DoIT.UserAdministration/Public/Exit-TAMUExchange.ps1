@@ -6,16 +6,10 @@
     The Exit-TAMUExchange function exits EAC.
 
 .INPUTS
+    None
 
 .OUTPUTS
-
-.NOTES
-
-Author: 
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    None
 
 #>
 

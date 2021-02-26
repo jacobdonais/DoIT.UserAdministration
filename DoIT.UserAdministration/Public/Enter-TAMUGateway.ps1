@@ -6,16 +6,10 @@
     The Enter-TAMUGateway function logs in to the CAS system and will do a DUO push.
 
 .INPUTS
+    None
 
 .OUTPUTS
-
-.NOTES
-
-Author: Jacob Donais
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    None
 
 #>
 

@@ -6,16 +6,10 @@
     The Set-TAMUMailboxQuota function sets the mailbox quota for a user in Exchange Management.
 
 .INPUTS
+    UIN, Quote (10 GB, 25 GB, 50 GB, 100 GB)
 
 .OUTPUTS
-
-.NOTES
-
-Author: Jacob Donais
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    Booleon
 
 #>
 
@@ -87,6 +81,7 @@ Function Set-TAMUMailboxQuota {
         Write-Verbose "..Checking for update"
         if ((Find-SeElement -Driver $Global:Driver -XPath "/html/body/div/div[2]/div[1]").Text -eq "User mailbox updated.") {
             Write-Verbose "Success....Update found"
+            Write-Output "Successfully set Quota to $Quota"
             return $true
         }
         Write-Verbose "Failed....Update not found"

@@ -7,16 +7,10 @@
     a given department.
 
 .INPUTS
+    UIN and Department
 
 .OUTPUTS
-
-.NOTES
-
-Author: Jacob Donais
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    Booleon
 
 #>
 
@@ -89,6 +83,7 @@ Function Add-TAMUContactFor {
         $Element = (Find-SeElement -Driver $Global:Driver -XPath "/html/body/div//form//label[contains(text(),'$Department')]/input[@type='checkbox']")
         if ($Element.selected) {
             Write-Verbose "....Checkbox found; already a contact for $Department"
+            Write-Output "Already a contact for $Department"
             return $true
         }
 
@@ -104,6 +99,7 @@ Function Add-TAMUContactFor {
         Write-Verbose "..Checking for update"
         if ((Find-SeElement -Driver $Global:Driver -XPath "/html/body/div/div[2]/div[1]").Text -eq "Contact group membership updated.") {
             Write-Verbose "Success....Update found"
+            Write-Output "Successfully added a contact for $Department"
             return $true
         }
         Write-Verbose "Failed....Update not found"

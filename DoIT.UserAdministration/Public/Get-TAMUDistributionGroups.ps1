@@ -6,16 +6,10 @@
     The Get-TAMUDistributionGroups function will return the distribution group information from Exchange Management.
 
 .INPUTS
+    UIN
 
 .OUTPUTS
-
-.NOTES
-
-Author: Jacob Donais
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    Distribution Groups
 
 #>
 
@@ -48,9 +42,6 @@ Function Get-TAMUDistributionGroups {
             Write-Verbose "..Not logged in. Entering TAMU Gateway..."
             Enter-TAMUGateway -Force
         }
-        $ret = [ordered]@{
-            UIN = $UIN
-        }
 
         ### Step 2: Get Distribution Groups ###
         Write-Verbose "..Getting Distribution Groups"
@@ -58,9 +49,6 @@ Function Get-TAMUDistributionGroups {
         if ($DistributionGroups -ne "User is not in any distribution groups.") {
             $DistributionGroups = $DistributionGroups -split "`n"
         }
-        $ret.DistributionGroups = $DistributionGroups
-
-        ### Step 3: Return object ###
-        return $ret
+        $DistributionGroups
     }
 }

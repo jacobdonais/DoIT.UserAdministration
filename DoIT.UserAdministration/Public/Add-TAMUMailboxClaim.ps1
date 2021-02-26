@@ -6,16 +6,10 @@
     The Add-TAMUMailboxClaim function claims a mailbox for a user.
 
 .INPUTS
+    UIN, Department
 
 .OUTPUTS
-
-.NOTES
-
-Author: Jacob Donais
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    Booleon
 
 #>
 
@@ -122,6 +116,7 @@ Function Add-TAMUMailboxClaim {
         Write-Verbose "..Checking for update"
         if ((Find-SeElement -Driver $Global:Driver -XPath "/html/body/div/div[2]/div[1]").Text -eq "Mailbox has been created for the user.") {
             Write-Verbose "Success....Update found"
+            Write-Output "Added mailbox claim for $Department"
             return $true
         }
         Write-Verbose "Failed....Update not found"

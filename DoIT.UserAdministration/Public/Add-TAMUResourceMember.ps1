@@ -6,16 +6,10 @@
     The Add-TAMUResourceMember function adds a user to one or more shared resources.
 
 .INPUTS
+    NetID, Resource
 
 .OUTPUTS
-
-.NOTES
-
-Author: 
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    None
 
 #>
 

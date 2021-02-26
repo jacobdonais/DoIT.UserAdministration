@@ -6,16 +6,10 @@
     The Get-TAMUUserDetails function will return the user detail information from Exchange Management.
 
 .INPUTS
+    UIN
 
 .OUTPUTS
-
-.NOTES
-
-Author: Jacob Donais
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    Name, NetID, UIN, Department
 
 #>
 

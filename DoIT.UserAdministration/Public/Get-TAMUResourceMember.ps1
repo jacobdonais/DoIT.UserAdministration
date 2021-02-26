@@ -6,16 +6,10 @@
     The Get-TAMUResourceMember function returns all users of a shared resource in EAC.
 
 .INPUTS
+    Resource
 
 .OUTPUTS
-
-.NOTES
-
-Author: 
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    Resource Members
 
 #>
 

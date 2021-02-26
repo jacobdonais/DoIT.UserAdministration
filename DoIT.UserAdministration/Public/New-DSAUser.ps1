@@ -6,16 +6,11 @@
     The New-DSAUser function creates a new DSA user account.
 
 .INPUTS
+    Username, FirstName, LastName, UIN (optional), NetID (optional), 
+    EmailDomain (optional), Department, FunctionalGroup
 
 .OUTPUTS
-
-.NOTES
-
-Author: Jacob Donais
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    None
 
 #>
 
@@ -509,7 +504,7 @@ Function New-DSAUser {
         if ($ClaimMailbox) {
             try {
                 Write-Verbose "Claim mailbox..."
-                New-TAMUMailbox -UIN $UIN -Username $UserName -EmailDomain $EmailDomain -Organization $Department
+                New-TAMUMailbox -UIN $UIN -Username $UserName -EmailDomain $EmailDomain -Department $Department
             }
             catch {
                 throw "Mailbox creation failed"
@@ -644,8 +639,8 @@ Function New-DSAUser {
         $NoteOutput = $NoteOutput -replace "===LASTNAME===",$LastName
         $NoteOutput = $NoteOutput -replace "===FIRSTNAME===",$FirstName
         $NoteOutput = $NoteOutput -replace "===USERNAME===",$UserName
-        $NoteOutput = $NoteOutput -replace "===EMAILADDRESS",$EmailAddress
-        $NoteOutput = $NoteOutput -replace "===TEMPPASSWORD",$TempPassword
+        $NoteOutput = $NoteOutput -replace "===EMAILADDRESS===",$EmailAddress
+        $NoteOutput = $NoteOutput -replace "===TEMPPASSWORD===",$TempPassword
         Write-Output $NoteOutput
     }
 }

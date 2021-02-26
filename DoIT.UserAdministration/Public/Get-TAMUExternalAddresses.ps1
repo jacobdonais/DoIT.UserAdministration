@@ -6,16 +6,10 @@
     The Get-TAMUExternalAddresses function returns all external addresses.
 
 .INPUTS
+    UIN
 
 .OUTPUTS
-
-.NOTES
-
-Author: Jacob Donais
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    External Addresses
 
 #>
 
@@ -53,10 +47,7 @@ Function Get-TAMUExternalAddresses {
         ### Step 2: Get External Address ###
         $Emails = (Find-SeElement -Driver $Global:Driver -XPath '/html/body/div/div[2]/div[2]/div/table/tbody/tr/td[1]').Text
         foreach ($Email in $Emails) {
-            New-Object psobject -Property ([ordered]@{
-                    UIN     = $UIN
-                    Address = $Email
-                })
+            $Email
         }
     }
 }

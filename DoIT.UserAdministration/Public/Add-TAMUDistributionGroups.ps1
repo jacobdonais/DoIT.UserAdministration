@@ -6,16 +6,10 @@
     The Add-TAMUDistributionGroups function adds a user to one or more distribution lists.
 
 .INPUTS
+    UIN, Department, DistributionGroups
 
 .OUTPUTS
-
-.NOTES
-
-Author: Jacob Donais
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    Booleon
 
 #>
 
@@ -116,6 +110,8 @@ Function Add-TAMUDistributionGroups {
                     Write-Verbose "......Found; $DistributionList selected"
                     $DistributionElement.Click()
                 }
+
+                Write-Output "Added to $DistributionList"
             }
             else {
                 throw "$DistributionList was not found"

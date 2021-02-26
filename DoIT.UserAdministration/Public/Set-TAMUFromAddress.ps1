@@ -6,16 +6,10 @@
     The Set-TAMUFromAddress function will set the default from address.
 
 .INPUTS
+    UIN and email
 
 .OUTPUTS
-
-.NOTES
-
-Author: Jacob Donais
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    Booleon
 
 #>
 
@@ -85,6 +79,7 @@ Function Set-TAMUFromAddress {
         Write-Verbose "..Checking for update"
         if ((Find-SeElement -Driver $Global:Driver -XPath "/html/body/div/div[2]/div[1]").Text -eq "User mailbox updated.") {
             Write-Verbose "Success....Update found"
+            Write-Output "Successfully default address to $Email"
             return $true
         }
         Write-Verbose "Failed....Update not found"

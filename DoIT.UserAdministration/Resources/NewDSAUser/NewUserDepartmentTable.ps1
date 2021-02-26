@@ -33,14 +33,14 @@ $UserLocation = @{
     }
     "Office of the VP for Student Affairs" = @{
         "MARCOMM - Staff" = @{
-		    HomeDriveText = ""
-		    ProfilePath = ""
+		    HomeDriveText = "\\dsa.reldom.tamu.edu\Student Affairs\Departments\Vice Presidents Office\Staff\"
+		    ProfilePath = "\\dsa.reldom.tamu.edu\users\Profiles\MARCOM"
 		    Groups = "MARCOM - Staff","OVP DSA MarCom"
 		    Win10OU = "OU=Secure Win10 Users,OU=Marketing and Communications,OU=Departments,OU=Student Affairs,DC=dsa,DC=reldom,DC=tamu,DC=edu"
         }
         "MARCOMM - Student Worker" = @{
-		    HomeDriveText = ""
-		    ProfilePath = ""
+		    HomeDriveText = "\\dsa.reldom.tamu.edu\Student Affairs\Departments\Vice Presidents Office\Staff\"
+		    ProfilePath = "\\dsa.reldom.tamu.edu\users\Profiles\MARCOM"
 		    Groups = "MARCOM - Student Workers","OVP DSA MarCom"
 		    Win10OU = "OU=Secure Win10 Users,OU=Marketing and Communications,OU=Departments,OU=Student Affairs,DC=dsa,DC=reldom,DC=tamu,DC=edu"
         }

@@ -7,16 +7,10 @@
     to set the address as default.
 
 .INPUTS
+    UIN, Username, Domain (optional)
 
 .OUTPUTS
-
-.NOTES
-
-Author: Jacob Donais
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    Booleon
 
 #>
 
@@ -138,6 +132,7 @@ Function Add-TAMUExternalAddresses {
         Write-Verbose "..Checking for update"
         if ((Find-SeElement -Driver $Global:Driver -XPath "/html/body/div/div[2]/div[1]").Text -eq "Address $Username@$EmailDomain added to account") {
             Write-Verbose "Success....Update found"
+            Write-Output "Added external address $Username@$EmailDomain"
             return $true
         }
         Write-Verbose "Failed....Update not found"

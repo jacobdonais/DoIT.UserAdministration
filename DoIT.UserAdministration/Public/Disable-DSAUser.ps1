@@ -16,16 +16,10 @@
     5. Output Disable User message
 
 .INPUTS
+    UserName
 
 .OUTPUTS
-
-.NOTES
-
-Author: Jacob Donais
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    None
 
 #>
 

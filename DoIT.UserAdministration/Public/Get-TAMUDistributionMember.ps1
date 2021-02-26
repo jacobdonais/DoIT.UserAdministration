@@ -6,16 +6,10 @@
     The Get-TAMUDistributionMember function returns all users of one or more distribution groups.
 
 .INPUTS
+    Distribution
 
 .OUTPUTS
-
-.NOTES
-
-Author: 
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    Distribution Members
 
 #>
 

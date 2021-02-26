@@ -6,16 +6,10 @@
     The Add-TAMUDistributionMember function adds a user to a distribution group.
 
 .INPUTS
+    NetID, Distribution
 
 .OUTPUTS
-
-.NOTES
-
-Author:
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    None
 
 #>
 

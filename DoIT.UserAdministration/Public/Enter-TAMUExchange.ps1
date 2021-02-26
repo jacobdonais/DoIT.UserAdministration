@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
     Enters EAC.
 
@@ -6,30 +6,22 @@
     The Enter-TAMUExchange function enters EAC.
 
 .INPUTS
+    None
 
 .OUTPUTS
-
-.NOTES
-
-Author: 
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    None
 
 #>
 
 function Enter-TAMUExchange {
-    [CmdletBinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidGlobalVars", "")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseDeclaredVarsMoreThanAssignments", "")]
-    Param (
-        [Parameter(Position = 0)]
-        [PSCredential]$Credential = (Get-Credential -Credential auth\)
+    [CmdletBinding()]Param (
+        [switch]$Force
     )
 
     Process {
-        if ("exchange.tamu.edu" -notin (Get-PSSession).ComputerName) {
+        if ("exchange.tamu.edu" -notin (Get-PSSession).ComputerName -or $Force) {
+            [PSCredential]$Credential = (Get-Credential -Credential auth\)
+
             $Session = New-PSSession -Credential ($Credential) -ConfigurationName Microsoft.Exchange -Authentication Basic -URI https://exchange.tamu.edu/powershell
 
             Import-PSSession -Session $Session -DisableNameChecking -AllowClobber

@@ -6,16 +6,10 @@
     The Remove-TAMUMailboxClaim function will remove the mailbox claim for a user.
 
 .INPUTS
+    UIN, Department
 
 .OUTPUTS
-
-.NOTES
-
-Author: Jacob Donais
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    Booleon
 
 #>
 
@@ -97,6 +91,7 @@ Function Remove-TAMUMailboxClaim {
         Write-Verbose "..Checking for update"
         if ((Find-SeElement -Driver $Global:Driver -XPath "/html/body/div/div[2]/div[1]").Text -eq "User's mailbox removed.") {
             Write-Verbose "Success....Update found"
+            Write-Output "Removed Mailbox Claim for $Department"
             return $true
         }
         Write-Verbose "Failed....Update not found"

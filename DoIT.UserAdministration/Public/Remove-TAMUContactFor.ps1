@@ -6,16 +6,10 @@
     The Remove-TAMUContactFor function removes a user as a contact for a department.
 
 .INPUTS
+    UIN, Department
 
 .OUTPUTS
-
-.NOTES
-
-Author: Jacob Donais
-Version: v1.0
-Change Log:
-    v1.0
-        Initial build
+    Booleon
 
 #>
 
@@ -103,6 +97,7 @@ Function Remove-TAMUContactFor {
         Write-Verbose "..Checking for update"
         if ((Find-SeElement -Driver $Global:Driver -XPath "/html/body/div/div[2]/div[1]").Text -eq "Contact group membership updated.") {
             Write-Verbose "Success....Update found"
+            Write-Output "Removed Contact for $Department"
             return $true
         }
         Write-Verbose "Failed....Update not found"
