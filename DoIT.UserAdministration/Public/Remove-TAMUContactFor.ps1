@@ -1,15 +1,21 @@
 ﻿<#
 .SYNOPSIS
-    Removes a user as a contact for.
+    Removes a user as a contact for from Exchange Management.
 
 .DESCRIPTION
-    The Remove-TAMUContactFor function removes a user as a contact for a department.
+    The Remove-TAMUContactFor function removes a user as a contact for a department from Exchange Management.
+
+.PARAMETER UIN
+    A TAMU UIN
+
+.PARAMETER Department
+    A DSA Department
 
 .INPUTS
     UIN, Department
 
 .OUTPUTS
-    Booleon
+    Boolean
 
 #>
 

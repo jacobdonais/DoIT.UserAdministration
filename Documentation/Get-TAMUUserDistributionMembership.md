@@ -1,20 +1,23 @@
-# {{Function Name}}
+# Get-TAMUUserDistributionMembership
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+
+Returns all distribution groups a user is a member of from Exchange Admin Center.
 
 ## SYNTAX
 
 ```
-{{Function Name}} [<CommonParameters>]
+Get-TAMUUserDistributionMembership [-NetID] <String[]> [-AsText] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+
+The Get-TAMUUserDistributionMembership function returns all distribution groups a user is a member of in Exchange Admin Center.
 
 ## EXAMPLES
 
 ### Example 1
+
 ```powershell
 PS C:\> {{ Add example code here }}
 ```
@@ -23,12 +26,35 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
+### NetID <String[]>
+
+    TAMU NetID
+
+    Required?                    true
+    Position?                    1
+    Default value
+    Accept pipeline input?       true (ByValue)
+    Accept wildcard characters?  false
+
+### AsText [<SwitchParameter>]
+
+    Required?                    false
+    Position?                    named
+    Default value                False
+    Accept pipeline input?       false
+    Accept wildcard characters?  false
+
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
+One of more valid TAMU NetID(s)
+
 ## OUTPUTS
+
+Distribution Membership
 
 ## NOTES
 

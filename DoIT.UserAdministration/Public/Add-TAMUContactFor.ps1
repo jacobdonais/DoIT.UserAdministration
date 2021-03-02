@@ -1,16 +1,22 @@
 ﻿<#
 .SYNOPSIS
-    Adds a user as a contact for a department.
+    Adds a user as a contact for a department in Exchange Management.
 
 .DESCRIPTION
-    The Add-TAMUContactFor function will add the given user as a contact for 
-    a given department.
+    The Add-TAMUContactFor function will add a user as a contact for a department in
+    Exchange Management.
+
+.PARAMETER UIN
+    A TAMU UIN.
+
+.PARAMETER Department
+    A DSA department. 
 
 .INPUTS
-    UIN and Department
+    A valid TAMU UIN and a valid Department.
 
 .OUTPUTS
-    Booleon
+    Boolean
 
 #>
 

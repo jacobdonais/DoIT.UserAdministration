@@ -1,15 +1,21 @@
 ﻿<#
 .SYNOPSIS
-    Removes an external address.
+    Removes an external address in Exchange Management.
 
 .DESCRIPTION
-    The Remove-TAMUExternalAddresses function removes an external address.
+    The Remove-TAMUExternalAddresses function removes an external address in Exchange Management.
+
+.PARAMETER UIN
+    A TAMU UIN
+
+.PARAMETER Email
+    An email address
 
 .INPUTS
     UIN, Email
 
 .OUTPUTS
-    Booleon
+    Boolean
 
 #>
 

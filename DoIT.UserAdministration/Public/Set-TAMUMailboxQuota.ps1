@@ -1,15 +1,21 @@
 ﻿<#
 .SYNOPSIS
-    Sets the mailbox quota
+    Sets the mailbox quota in Exchange Management.
 
 .DESCRIPTION
     The Set-TAMUMailboxQuota function sets the mailbox quota for a user in Exchange Management.
 
+.PARAMETER UIN
+    A TAMU UIN
+
+.PARAMETER Quota
+    The mailbox quota size: (10 GB, 25 GB, 50 GB, 100 GB)
+
 .INPUTS
-    UIN, Quote (10 GB, 25 GB, 50 GB, 100 GB)
+    UIN, Quota (10 GB, 25 GB, 50 GB, 100 GB)
 
 .OUTPUTS
-    Booleon
+    Boolean
 
 #>
 

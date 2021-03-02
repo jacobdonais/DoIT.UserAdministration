@@ -1,9 +1,9 @@
 ﻿<#
 .SYNOPSIS
-    Returns a user's information from EAC.
+    Returns a user's information from Exchange Admin Center.
 
 .DESCRIPTION
-    The Search-TAMUExchange function will search EAC and return a user's information.
+    The Search-TAMUExchange function will search Exchange Admin Center and return a user's information.
 
 .INPUTS
 

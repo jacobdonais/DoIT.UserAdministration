@@ -5,8 +5,11 @@
 .DESCRIPTION
     The Get-TAMUMailboxDetails function will return the mailbox details from Exchange Management.
 
+.PARAMETER UIN
+    A TAMU UIN
+
 .INPUTS
-    UIN
+    A valid TAMU UIN
 
 .OUTPUTS
     Mailbox Details

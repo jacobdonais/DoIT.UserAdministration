@@ -5,6 +5,9 @@
 .DESCRIPTION
     The New-TAMUMailbox function will claim a mailbox and add default and optional external addresses.
 
+.PARAMETER UIN
+    A TAMU UIN
+
 .INPUTS
     UIN, UserName, EmailDomain, Department
 

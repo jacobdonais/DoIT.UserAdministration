@@ -1,12 +1,15 @@
 ﻿<#
 .SYNOPSIS
-    Returns all shared mailboxes for a user.
+    Returns all shared mailboxes for a user from Exchange Admin Center.
 
 .DESCRIPTION
-    The Get-TAMUUserResourceMembership function returns all shared mailboxes for a user in EAC.
+    The Get-TAMUUserResourceMembership function returns all shared mailboxes for a user in Exchange Admin Center.
+
+.PARAMETER NetID
+    TAMU NetID
 
 .INPUTS
-    NetID
+    One or more valid TAMU NetID(s)
 
 .OUTPUTS
     TAMU Resource Membership

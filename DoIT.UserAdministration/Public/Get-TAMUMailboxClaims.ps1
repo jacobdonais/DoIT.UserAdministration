@@ -5,8 +5,11 @@
 .DESCRIPTION
     The Get-TAMUMailboxClaims function will return the mailbox claim information from Exchange Management.
 
+.PARAMETER UIN
+    A TAMU UIN
+
 .INPUTS
-    UIN
+    A valid TAMU UIN
 
 .OUTPUTS
     Mailbox claims

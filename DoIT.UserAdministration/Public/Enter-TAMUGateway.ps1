@@ -5,6 +5,9 @@
 .DESCRIPTION
     The Enter-TAMUGateway function logs in to the CAS system and will do a DUO push.
 
+.PARAMETER Force
+    Forces the login
+
 .INPUTS
     None
 

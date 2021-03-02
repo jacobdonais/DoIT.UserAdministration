@@ -15,15 +15,18 @@
     4f. Remove Mailbox Claim
     5. Output Disable User message
 
+.PARAMETER UserName
+    DSA Username
+
 .INPUTS
-    UserName
+    A valid AD UserName
 
 .OUTPUTS
     None
 
 #>
 
-Function Disable-ADUser {
+Function Disable-DSAUser {
     [CmdletBinding()]Param (
         [Parameter (Mandatory = $true, Position = 0)]
         [ValidateNotNullOrEmpty()]

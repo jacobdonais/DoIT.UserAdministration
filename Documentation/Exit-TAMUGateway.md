@@ -1,20 +1,23 @@
-# {{Function Name}}
+# Exit-TAMUGateway
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+
+Logs out of CAS.
 
 ## SYNTAX
 
 ```
-{{Function Name}} [<CommonParameters>]
+Exit-TAMUGateway [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+
+The Exit-TAMUGateway function logs out of CAS.
 
 ## EXAMPLES
 
 ### Example 1
+
 ```powershell
 PS C:\> {{ Add example code here }}
 ```
@@ -24,11 +27,16 @@ PS C:\> {{ Add example code here }}
 ## PARAMETERS
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
+None
+
 ## OUTPUTS
+
+None
 
 ## NOTES
 

@@ -1,15 +1,24 @@
 ﻿<#
 .SYNOPSIS
-    Removes a user from one or more distribution lists.
+    Removes a user from one or more distribution lists in Exchange Management.
 
 .DESCRIPTION
-    The Remove-TAMUDistributionGroups function removes a user from one or more distribution lists.
+    The Remove-TAMUDistributionGroups function removes a user from one or more distribution lists in Exchange Management.
+
+.PARAMETER UIN
+    A TAMU UIN
+
+.PARAMETER Department
+    DSA Department
+
+.PARAMETER DistributionLists
+    DSA Distribution list. Either in "DSA - DL " format or as an email
 
 .INPUTS
     UIN, DistributionList (DSA - DL * -or- resource@department.tamu.edu)
 
 .OUTPUTS
-    Booleon
+    Boolean
 
 #>
 

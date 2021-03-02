@@ -1,15 +1,25 @@
 ﻿<#
 .SYNOPSIS
-    Adds a user to one or more distribution lists
+    Adds a user to one or more distribution lists in Exchange Management.
 
 .DESCRIPTION
-    The Add-TAMUDistributionGroups function adds a user to one or more distribution lists.
+    The Add-TAMUDistributionGroups function adds a user to one or more distribution lists
+    in Exchange Management.
+
+.PARAMETER UIN
+    A TAMU UIN
+
+.PARAMETER Department
+    A DSA department
+
+.PARAMETER DistributionLists
+    A Distribution List for the department
 
 .INPUTS
-    UIN, Department, DistributionGroups
+    A valid TAMU UIN, valid Department, and a valid DistributionGroups
 
 .OUTPUTS
-    Booleon
+    Boolean
 
 #>
 

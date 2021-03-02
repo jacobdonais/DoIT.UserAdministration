@@ -1,15 +1,21 @@
 ﻿<#
 .SYNOPSIS
-    Removes a mailbox claim for a user.
+    Removes a mailbox claim for a user in Exchange Management.
 
 .DESCRIPTION
-    The Remove-TAMUMailboxClaim function will remove the mailbox claim for a user.
+    The Remove-TAMUMailboxClaim function will remove the mailbox claim for a user in Exchange Management.
+
+.PARAMETER UIN
+    A TAMU UIN
+
+.PARAMETER Department
+    A DSA Department
 
 .INPUTS
     UIN, Department
 
 .OUTPUTS
-    Booleon
+    Boolean
 
 #>
 

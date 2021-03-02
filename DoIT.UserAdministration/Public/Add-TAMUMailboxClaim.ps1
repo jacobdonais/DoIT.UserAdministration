@@ -1,15 +1,24 @@
 ﻿<#
 .SYNOPSIS
-    Claims a mailbox for a user.
+    Claims a mailbox for a user in Exchange Management.
 
 .DESCRIPTION
-    The Add-TAMUMailboxClaim function claims a mailbox for a user.
+    The Add-TAMUMailboxClaim function claims a mailbox for a user in Exchange Management.
+
+.PARAMETER UIN
+    A TAMU UIN
+
+.PARAMETER Department
+    A DSA Department
+
+.PARAMETER Quota
+    A mailbox quota
 
 .INPUTS
-    UIN, Department
+    A valid TAMU UIN, a DSA Department, and a size quota (optional)
 
 .OUTPUTS
-    Booleon
+    Boolean
 
 #>
 

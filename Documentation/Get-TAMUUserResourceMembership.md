@@ -1,20 +1,23 @@
-# {{Function Name}}
+# Get-TAMUUserResourceMembership
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+
+Returns all shared mailboxes for a user from Exchange Admin Center.
 
 ## SYNTAX
 
 ```
-{{Function Name}} [<CommonParameters>]
+Get-TAMUUserResourceMembership [-NetID] <String[]> [-AsText] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+
+The Get-TAMUUserResourceMembership function returns all shared mailboxes for a user in Exchange Admin Center.
 
 ## EXAMPLES
 
 ### Example 1
+
 ```powershell
 PS C:\> {{ Add example code here }}
 ```
@@ -23,12 +26,35 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
+### NetID <String[]>
+
+    TAMU NetID
+
+    Required?                    true
+    Position?                    1
+    Default value
+    Accept pipeline input?       true (ByValue)
+    Accept wildcard characters?  false
+
+### AsText [<SwitchParameter>]
+
+    Required?                    false
+    Position?                    named
+    Default value                False
+    Accept pipeline input?       false
+    Accept wildcard characters?  false
+
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
+One or more valid TAMU NetID(s)
+
 ## OUTPUTS
+
+TAMU Resource Membership
 
 ## NOTES
 

@@ -1,20 +1,23 @@
-# {{Function Name}}
+# Enter-TAMUExchange
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+
+Enters Exchange Admin Center.
 
 ## SYNTAX
 
 ```
-{{Function Name}} [<CommonParameters>]
+Enter-TAMUExchange [-Force] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+
+The Enter-TAMUExchange function enters Exchange Admin Center.
 
 ## EXAMPLES
 
 ### Example 1
+
 ```powershell
 PS C:\> {{ Add example code here }}
 ```
@@ -23,12 +26,27 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
+### Force [<SwitchParameter>]
+
+    Forces the login
+
+    Required?                    false
+    Position?                    named
+    Default value                False
+    Accept pipeline input?       false
+    Accept wildcard characters?  false
+
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
+None
+
 ## OUTPUTS
+
+None
 
 ## NOTES
 

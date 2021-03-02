@@ -1,12 +1,21 @@
 ﻿<#
 .SYNOPSIS
-    Adds a user to one or more shared resources.
+    Adds a user to one or more shared resources in Exchange Admin Center.
 
 .DESCRIPTION
-    The Add-TAMUResourceMember function adds a user to one or more shared resources.
+    The Add-TAMUResourceMember function adds a user to one or more shared resources in Exchange Admin Center.
+
+.PARAMETER NetID
+    A TAMU NetID
+
+.PARAMETER Resource
+    A DSA Resource
+
+.PARAMETER AutoMapping
+    Automapping mailbox in Outlook
 
 .INPUTS
-    NetID, Resource
+    Valid TAMU NetID(s), Resource(s), automapping (optional)
 
 .OUTPUTS
     None

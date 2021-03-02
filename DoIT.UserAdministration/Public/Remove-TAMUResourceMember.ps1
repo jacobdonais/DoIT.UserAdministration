@@ -1,9 +1,15 @@
 ﻿<#
 .SYNOPSIS
-    Removes a user from a shared mailbox.
+    Removes a user from a shared mailbox in Exchange Admin Center.
 
 .DESCRIPTION
-    The Remove-TAMUResourceMember function removes a user from a shared mailbox in EAC.
+    The Remove-TAMUResourceMember function removes a user from a shared mailbox in Exchange Admin Center.
+
+.PARAMETER NetID
+    TAMU NetID
+
+.PARAMETER Resource
+    TAMU Resource
 
 .INPUTS
     NetID, Resource

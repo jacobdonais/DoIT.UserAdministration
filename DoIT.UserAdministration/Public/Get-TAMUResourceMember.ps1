@@ -1,12 +1,15 @@
 ﻿<#
 .SYNOPSIS
-    Returns all users of a shared resource.
+    Returns all users of a shared resource from Exchange Admin Center.
 
 .DESCRIPTION
-    The Get-TAMUResourceMember function returns all users of a shared resource in EAC.
+    The Get-TAMUResourceMember function returns all users of a shared resource in Exchange Admin Center.
+
+.PARAMETER Resource
+    A TAMU resource
 
 .INPUTS
-    Resource
+    A valid TAMU resource
 
 .OUTPUTS
     Resource Members

@@ -5,8 +5,11 @@
 .DESCRIPTION
     The Get-TAMUContactFor function will return the contact for from Exchange Management.
 
+.PARAMETER UIN
+    A TAMU UIN
+
 .INPUTS
-    UIN
+    A valid TAMU UIN
 
 .OUTPUTS
     Contact For

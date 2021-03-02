@@ -1,9 +1,12 @@
 <#
 .SYNOPSIS
-    Enters EAC.
+    Enters Exchange Admin Center.
 
 .DESCRIPTION
-    The Enter-TAMUExchange function enters EAC.
+    The Enter-TAMUExchange function enters Exchange Admin Center.
+
+.PARAMETER Force
+    Forces the login
 
 .INPUTS
     None

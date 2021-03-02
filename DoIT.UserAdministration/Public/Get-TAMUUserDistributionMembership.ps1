@@ -1,13 +1,16 @@
 ﻿<#
 .SYNOPSIS
-    Returns all distribution groups a user is a member of.
+    Returns all distribution groups a user is a member of from Exchange Admin Center.
 
 .DESCRIPTION
     The Get-TAMUUserDistributionMembership function returns all distribution groups a user is a member of
-    in EAC.
+    in Exchange Admin Center.
+
+.PARAMETER NetID
+    TAMU NetID
 
 .INPUTS
-    NetID
+    One of more valid TAMU NetID(s)
 
 .OUTPUTS
     Distribution Membership

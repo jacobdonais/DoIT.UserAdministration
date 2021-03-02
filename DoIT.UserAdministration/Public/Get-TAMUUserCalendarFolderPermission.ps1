@@ -1,13 +1,16 @@
 ﻿<#
 .SYNOPSIS
-    Returns all calendar folder permissions for one or more user accounts.
+    Returns all calendar folder permissions for one or more user accounts from Exchange Admin Center.
 
 .DESCRIPTION
     The Get-TAMUUserCalendarFolderPermission function returns all calendar folder permissions for one
-    or more user accounts.
+    or more user accounts from Exchange Admin Center.
+
+.PARAMETER NetID
+    TAMU NetID
 
 .INPUTS
-    NetID
+    One of more valid TAMU NetID(s)
 
 .OUTPUTS
     Calendar Folder Permission

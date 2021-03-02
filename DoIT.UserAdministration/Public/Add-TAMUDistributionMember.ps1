@@ -1,12 +1,18 @@
 ﻿<#
 .SYNOPSIS
-    Adds a user to a distribution group
+    Adds a user to one or more distribution groups in Exchange Admin Center.
 
 .DESCRIPTION
-    The Add-TAMUDistributionMember function adds a user to a distribution group.
+    The Add-TAMUDistributionMember function adds a user to one or more distribution groups in in Exchange Admin Center.
+
+.PARAMETER NetID
+    TAMU NetID
+
+.PARAMETER Distribution
+    DSA Distribution List
 
 .INPUTS
-    NetID, Distribution
+    Valid NetID(s) and valid Distribution(s)
 
 .OUTPUTS
     None

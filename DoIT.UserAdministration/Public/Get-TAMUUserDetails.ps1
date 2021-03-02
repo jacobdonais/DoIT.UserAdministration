@@ -5,8 +5,11 @@
 .DESCRIPTION
     The Get-TAMUUserDetails function will return the user detail information from Exchange Management.
 
+.PARAMETER UIN
+    A TAMU UIN
+
 .INPUTS
-    UIN
+    A valid TAMU UIN
 
 .OUTPUTS
     Name, NetID, UIN, Department

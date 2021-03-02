@@ -1,16 +1,24 @@
 ﻿<#
 .SYNOPSIS
-    Will add an external email address to an account.
+    Will add an external email address to an account in Exchange Management.
 
 .DESCRIPTION
-    The Add-TAMUExternalAddresses function will add an external address. There is a flag
-    to set the address as default.
+    The Add-TAMUExternalAddresses function will add an external address in Exchange Management.
+
+.PARAMETER UIN
+    A TAMU UIN
+
+.PARAMETER Username
+    A Username
+
+.PARAMETER EmailDomain
+    A DSA email domain
 
 .INPUTS
-    UIN, Username, Domain (optional)
+    A valid TAMU UIN, a Username, and a Domain (optional)
 
 .OUTPUTS
-    Booleon
+    Boolean
 
 #>
 

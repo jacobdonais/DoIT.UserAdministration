@@ -5,8 +5,11 @@
 .DESCRIPTION
     The Get-TAMUDistributionGroups function will return the distribution group information from Exchange Management.
 
+.PARAMETER UIN
+    A TAMU UIN
+
 .INPUTS
-    UIN
+    A valid TAMU UIN
 
 .OUTPUTS
     Distribution Groups

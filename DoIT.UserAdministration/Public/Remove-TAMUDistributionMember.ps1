@@ -1,9 +1,15 @@
 <#
 .SYNOPSIS
-    Removes a user from a distribution group.
+    Removes a user from a distribution group in Exchange Admin Center.
 
 .DESCRIPTION
-    The Remove-TAMUDistributionMember function removes a user from a distribution group.
+    The Remove-TAMUDistributionMember function removes a user from a distribution group in Exchange Admin Center.
+
+.PARAMETER NetID
+    TAMU NetID
+
+.PARAMETER Distribution
+    TAMU Distribution
 
 .INPUTS
     NetID, DistributionList

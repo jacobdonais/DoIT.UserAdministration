@@ -1,12 +1,15 @@
 ﻿<#
 .SYNOPSIS
-    Returns external addresses
+    Returns external addresses from Exchange Management.
 
 .DESCRIPTION
-    The Get-TAMUExternalAddresses function returns all external addresses.
+    The Get-TAMUExternalAddresses function returns all external addresses from Exchange Management.
+
+.PARAMETER UIN
+    A TAMU UIN
 
 .INPUTS
-    UIN
+    A valid TAMU UIN
 
 .OUTPUTS
     External Addresses

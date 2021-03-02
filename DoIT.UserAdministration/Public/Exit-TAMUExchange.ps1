@@ -1,9 +1,9 @@
 ﻿<#
 .SYNOPSIS
-    Exits EAC.
+    Exits Exchange Admin Center.
 
 .DESCRIPTION
-    The Exit-TAMUExchange function exits EAC.
+    The Exit-TAMUExchange function exits Exchange Admin Center.
 
 .INPUTS
     None

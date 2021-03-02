@@ -1,12 +1,15 @@
 ﻿<#
 .SYNOPSIS
-    
+    Sets Automapping to true for shared resources.
 
 .DESCRIPTION
     The Set-AutoMappingTrue function will perform the following:
     1. Get all mailboxes in EAC for a user
     2. Remove all mailbox permissions for all shared mailboxes
     3. Add all mailboxes back with full permissions and set the automap flag to true
+
+.PARAMETER NetID
+    TAMU NetID
 
 .INPUTS
     NetID

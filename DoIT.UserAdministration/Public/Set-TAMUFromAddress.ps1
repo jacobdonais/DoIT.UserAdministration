@@ -1,15 +1,21 @@
 ﻿<#
 .SYNOPSIS
-    Sets default from address
+    Sets default from address in Exchange Management.
 
 .DESCRIPTION
-    The Set-TAMUFromAddress function will set the default from address.
+    The Set-TAMUFromAddress function will set the default from address in Exchange Management.
+
+.PARAMETER UIN
+    A TAMU UIN
+
+.PARAMETER Email
+    An email for the user
 
 .INPUTS
     UIN and email
 
 .OUTPUTS
-    Booleon
+    Boolean
 
 #>
 

@@ -1,12 +1,15 @@
 ﻿<#
 .SYNOPSIS
-    Returns all users of one or more distribution groups.
+    Returns all users of one or more distribution groups from Exchange Admin Center.
 
 .DESCRIPTION
-    The Get-TAMUDistributionMember function returns all users of one or more distribution groups.
+    The Get-TAMUDistributionMember function returns all users of one or more distribution groups from Exchange Admin Center.
+
+.PARAMETER Distribution
+    TAMU Distribution
 
 .INPUTS
-    Distribution
+    One or more valid TAMU Distribution
 
 .OUTPUTS
     Distribution Members
