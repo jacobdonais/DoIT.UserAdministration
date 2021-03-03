@@ -19,10 +19,10 @@ The Add-TAMUContactFor function will add a user as a contact for a department in
 ### Example 1
 
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Add-TAMUContactFor -UIN 123005678 -Department "Student Affairs IT"
 ```
 
-{{ Add example description here }}
+Adds user UIN 123005678 as a contact for "Student Affairs IT"
 
 ## PARAMETERS
 

@@ -5,6 +5,14 @@
 .DESCRIPTION
     The Enter-TAMUExchange function enters Exchange Admin Center.
 
+.EXAMPLE
+    PS> Enter-TAMUExchange
+    This will prompt you for your NetID and password, then connect you to exchange.
+
+.EXAMPLE
+    PS> Enter-TAMUExchange -Credential auth\johndoe
+    This will prompt you for your NetID password, with the username portion already filled out, then connect you to exchange.
+
 .PARAMETER Force
     Forces the login
 

@@ -5,6 +5,14 @@
 .DESCRIPTION
     The Get-TAMUUserDetails function will return the user detail information from Exchange Management.
 
+.EXAMPLE
+    PS> Get-TAMUUserDetail -Identity 123004567
+    Gets user data for user 123004567.
+
+.EXAMPLE
+    PS> Get-TAMUUserDetail -Identity 123004567,NetID1,NetID2
+    Gets user data for users 123004567, NetID1, and NetID2.
+
 .PARAMETER UIN
     A TAMU UIN
 

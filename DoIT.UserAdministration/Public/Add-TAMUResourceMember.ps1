@@ -5,6 +5,26 @@
 .DESCRIPTION
     The Add-TAMUResourceMember function adds a user to one or more shared resources in Exchange Admin Center.
 
+.EXAMPLE
+    PS> Add-TAMUResourceMember -NetID "jondoe" -Resource "fake-mb-1"
+    This adds a single user to a single mailbox.
+
+.EXAMPLE
+    PS> Add-TAMUResourceMember -NetID "jondoe","janedoe" -Resource "fake-mb-1"
+    This adds multiple users to a single mailbox.
+
+.EXAMPLE
+    PS> Add-TAMUResourceMember -NetID "jondoe" -Resource "fake-mb-1","fake-mb-2"
+    This adds a single user to multiple mailboxes.
+
+.EXAMPLE
+    PS> Add-TAMUResourceMember -NetID "jondoe","janedoe" -Resource "fake-mb-1","fake-mb-2"
+    This adds multiple users to multiple mailboxes.
+
+.EXAMPLE
+    PS> Add-TAMUResourceMember -NetID "jondoe" -Resource "fake-mb-1" -AutoMapping:$false
+    This adds a single user to a single mailbox and turns off automapping.
+
 .PARAMETER NetID
     A TAMU NetID
 

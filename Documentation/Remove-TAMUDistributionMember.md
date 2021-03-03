@@ -17,12 +17,32 @@ The Remove-TAMUDistributionMember function removes a user from a distribution gr
 ## EXAMPLES
 
 ### Example 1
-
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Remove-TAMUDistributionMember -NetID "jondoe" -Distribution "fake-dl-1"
 ```
 
-{{ Add example description here }}
+This removes a single user from a single DL.
+
+### Example 2
+```powershell
+PS C:\> Remove-TAMUDistributionMember -NetID "jondoe" -Distribution "fake-dl-1","fake-dl-2"
+```
+
+This removes a single user from multiple DL's.
+
+### Example 3
+```powershell
+PS C:\> Remove-TAMUDistributionMember -NetID "jondoe","janedoe" -Distribution "fake-dl-1"
+```
+
+This removes multiple users from a single DL.
+
+### Example 4
+```powershell
+PS C:\> Remove-TAMUDistributionMember -NetID "jondoe","janedoe" -Distribution "fake-dl-1","fake-dl-2"
+```
+
+This removes multiple users from multiple DL's.
 
 ## PARAMETERS
 

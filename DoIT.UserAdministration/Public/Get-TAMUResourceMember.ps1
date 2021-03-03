@@ -5,6 +5,14 @@
 .DESCRIPTION
     The Get-TAMUResourceMember function returns all users of a shared resource in Exchange Admin Center.
 
+.EXAMPLE
+    PS C:\> Get-TAMUResourceMember -Resource "fake-mb-1"
+    This returns the membership of a single mailbox.
+
+.EXAMPLE
+    PS C:\> Get-TAMUResourceMember -Resource "fake-mb-1","fake-mb-2"
+    This returns the membership of multiple mailboxes.
+
 .PARAMETER Resource
     A TAMU resource
 

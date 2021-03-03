@@ -17,12 +17,19 @@ The Get-TAMUUserDistributionMembership function returns all distribution groups 
 ## EXAMPLES
 
 ### Example 1
-
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-TAMUUserDistributionMembership -NetID "jdoe"
 ```
 
-{{ Add example description here }}
+This will return all distribution lists that user 'jdoe' is a member of.
+
+### Example 2
+```powershell
+PS C:\> "jdoe" | Get-TAMUUserDistributionMembership
+```
+
+This will also return all distribution lists that user 'jdoe' is a member of.
+
 
 ## PARAMETERS
 

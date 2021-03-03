@@ -5,6 +5,22 @@
 .DESCRIPTION
     The Add-TAMUDistributionMember function adds a user to one or more distribution groups in in Exchange Admin Center.
 
+.EXAMPLE
+    PS> Add-TAMUDistributionMember -NetID "jondoe" -Distribution "fake-dl-1"
+    This adds a single user to a single DL.
+
+.EXAMPLE
+    PS> Add-TAMUDistributionMember -NetID "jondoe","janedoe" -Distribution "fake-dl-1"
+    This adds multiple users to a single DL.
+
+.EXAMPLE
+    PS> Add-TAMUDistributionMember -NetID "jondoe" -Distribution "fake-dl-1","fake-dl-2"
+    This adds one user to multiple DL's.
+
+.EXAMPLE
+    PS> Add-TAMUDistributionMember -NetID "jondoe","janedoe" -Distribution "fake-dl-1","fake-dl-2"
+    This adds multiple users to multiple DL's.
+
 .PARAMETER NetID
     TAMU NetID
 

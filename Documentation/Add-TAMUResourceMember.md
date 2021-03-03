@@ -17,12 +17,39 @@ The Add-TAMUResourceMember function adds a user to one or more shared resources 
 ## EXAMPLES
 
 ### Example 1
-
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Add-TAMUResourceMember -NetID "jondoe" -Resource "fake-mb-1"
 ```
 
-{{ Add example description here }}
+This adds a single user to a single mailbox.
+
+### Example 2
+```powershell
+PS C:\> Add-TAMUResourceMember -NetID "jondoe","janedoe" -Resource "fake-mb-1"
+```
+
+This adds multiple users to a single mailbox.
+
+### Example 3
+```powershell
+PS C:\> Add-TAMUResourceMember -NetID "jondoe" -Resource "fake-mb-1","fake-mb-2"
+```
+
+This adds a single user to multiple mailboxes.
+
+### Example 4
+```powershell
+PS C:\> Add-TAMUResourceMember -NetID "jondoe","janedoe" -Resource "fake-mb-1","fake-mb-2"
+```
+
+This adds multiple users to multiple mailboxes.
+
+### Example 5
+```powershell
+PS C:\> Add-TAMUResourceMember -NetID "jondoe" -Resource "fake-mb-1" -AutoMapping:$false
+```
+
+This adds a single user to a single mailbox and turns off automapping.
 
 ## PARAMETERS
 

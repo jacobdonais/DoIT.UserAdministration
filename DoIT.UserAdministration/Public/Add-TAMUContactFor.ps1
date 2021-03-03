@@ -6,6 +6,10 @@
     The Add-TAMUContactFor function will add a user as a contact for a department in
     Exchange Management.
 
+.EXAMPLE
+    PS> Add-TAMUContactFor -UIN 123005678 -Department "Student Affairs IT"
+    Adds user UIN 123005678 as a contact for "Student Affairs IT"
+
 .PARAMETER UIN
     A TAMU UIN.
 

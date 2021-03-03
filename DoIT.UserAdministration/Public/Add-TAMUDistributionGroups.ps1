@@ -6,6 +6,14 @@
     The Add-TAMUDistributionGroups function adds a user to one or more distribution lists
     in Exchange Management.
 
+.EXAMPLE
+    PS> Add-TAMUDistributionGroups -UIN 123004567 -Department "Student Affairs IT" -DistributionLists "DSA - DL - DoIT Service Desk Techs"
+    Adds a user to one distribution list
+
+.EXAMPLE
+    PS> Add-TAMUDistributionGroups -UIN 123004567 -Department "Student Affairs IT" -DistributionLists "DSA - DL - DoIT Service Desk Techs","DSA - DL - DoIT Student Workers"
+    Adds a user to multiple distribution lists
+
 .PARAMETER UIN
     A TAMU UIN
 

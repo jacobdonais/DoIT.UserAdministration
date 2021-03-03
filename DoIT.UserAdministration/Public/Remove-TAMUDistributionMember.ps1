@@ -5,6 +5,22 @@
 .DESCRIPTION
     The Remove-TAMUDistributionMember function removes a user from a distribution group in Exchange Admin Center.
 
+.EXAMPLE
+    PS > Remove-TAMUDistributionMember -NetID "jondoe" -Distribution "fake-dl-1"
+    This removes a single user from a single DL.
+
+.EXAMPLE
+    PS> Remove-TAMUDistributionMember -NetID "jondoe" -Distribution "fake-dl-1","fake-dl-2"
+    This removes a single user from multiple DL's.
+
+.EXAMPLE
+    PS> Remove-TAMUDistributionMember -NetID "jondoe","janedoe" -Distribution "fake-dl-1"
+    This removes multiple users from a single DL.
+
+.EXAMPLE
+    PS> Remove-TAMUDistributionMember -NetID "jondoe","janedoe" -Distribution "fake-dl-1","fake-dl-2"
+    This removes multiple users from multiple DL's.
+
 .PARAMETER NetID
     TAMU NetID
 

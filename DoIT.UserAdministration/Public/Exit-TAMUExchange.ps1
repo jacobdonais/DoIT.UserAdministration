@@ -5,6 +5,10 @@
 .DESCRIPTION
     The Exit-TAMUExchange function exits Exchange Admin Center.
 
+.EXAMPLE
+    PS> Exit-TAMUExchange
+    This is the only way to call the function.
+
 .INPUTS
     None
 

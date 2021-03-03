@@ -21,12 +21,11 @@ The Set-AutoMappingTrue function will perform the following:
 ## EXAMPLES
 
 ### Example 1
-
-```powershell
-PS C:\> {{ Add example code here }}
+```
+PS C:\> Set-AutoMappingTrue -NetID "jdoe"
 ```
 
-{{ Add example description here }}
+This will remove user jdoe from all their resources and re-add them, with auto-mapping turned ON.
 
 ## PARAMETERS
 

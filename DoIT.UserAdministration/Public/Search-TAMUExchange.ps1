@@ -5,6 +5,18 @@
 .DESCRIPTION
     The Search-TAMUExchange function will search Exchange Admin Center and return a user's information.
 
+.EXAMPLE
+    PS> Search-TAMUExchange -Distribution -OrganizationalUnit <Press_TAB>
+    This will show you all distribution lists for the selected department.
+
+.EXAMPLE
+    PS> Search-TAMUExchange -Resource -OrganizationalUnit <Press_TAB>
+    This will show you all mailboxes for the selected department.
+
+.EXAMPLE
+    PS> Search-TAMUExchange -Distribution -Resource -OrganizationalUnit <Press_TAB>
+    This will show you all distributions and mailboxes for the selected department.
+
 .INPUTS
 
 .OUTPUTS

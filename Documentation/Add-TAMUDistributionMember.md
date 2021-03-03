@@ -17,12 +17,32 @@ The Add-TAMUDistributionMember function adds a user to one or more distribution 
 ## EXAMPLES
 
 ### Example 1
-
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Add-TAMUDistributionMember -NetID "jondoe" -Distribution "fake-dl-1"
 ```
 
-{{ Add example description here }}
+This adds a single user to a single DL.
+
+### Example 2
+```powershell
+PS C:\> Add-TAMUDistributionMember -NetID "jondoe","janedoe" -Distribution "fake-dl-1"
+```
+
+This adds multiple users to a single DL.
+
+### Example 3
+```powershell
+PS C:\> Add-TAMUDistributionMember -NetID "jondoe" -Distribution "fake-dl-1","fake-dl-2"
+```
+
+This adds one user to multiple DL's.
+
+### Example 4
+```powershell
+PS C:\> Add-TAMUDistributionMember -NetID "jondoe","janedoe" -Distribution "fake-dl-1","fake-dl-2"
+```
+
+This adds multiple users to multiple DL's.
 
 ## PARAMETERS
 

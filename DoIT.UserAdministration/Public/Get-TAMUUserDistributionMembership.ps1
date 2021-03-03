@@ -6,6 +6,14 @@
     The Get-TAMUUserDistributionMembership function returns all distribution groups a user is a member of
     in Exchange Admin Center.
 
+.EXAMPLE
+    PS > Get-TAMUUserDistributionMembership -NetID "jdoe"
+    This will return all distribution lists that user 'jdoe' is a member of.
+
+.EXAMPLE
+    PS> "jdoe" | Get-TAMUUserDistributionMembership
+    This will also return all distribution lists that user 'jdoe' is a member of.
+
 .PARAMETER NetID
     TAMU NetID
 

@@ -17,12 +17,11 @@ The Exit-TAMUExchange function exits Exchange Admin Center.
 ## EXAMPLES
 
 ### Example 1
-
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Exit-TAMUExchange
 ```
 
-{{ Add example description here }}
+This is the only way to call the function.
 
 ## PARAMETERS
 

@@ -19,10 +19,18 @@ The Add-TAMUDistributionGroups function adds a user to one or more distribution 
 ### Example 1
 
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Add-TAMUDistributionGroups -UIN 123004567 -Department "Student Affairs IT" -DistributionLists "DSA - DL - DoIT Service Desk Techs"
 ```
 
-{{ Add example description here }}
+Adds a user to one distribution list
+
+### Example 2
+
+```powershell
+PS C:\> Add-TAMUDistributionGroups -UIN 123004567 -Department "Student Affairs IT" -DistributionLists "DSA - DL - DoIT Service Desk Techs","DSA - DL - DoIT Student Workers"
+```
+
+Adds a user to multiple distribution lists
 
 ## PARAMETERS
 

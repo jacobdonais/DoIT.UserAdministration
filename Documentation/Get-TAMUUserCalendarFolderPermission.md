@@ -17,12 +17,28 @@ The Get-TAMUUserCalendarFolderPermission function returns all calendar folder pe
 ## EXAMPLES
 
 ### Example 1
-
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-TAMUUserCalendarFolderPermission -NetID "jdoe"
+NetID         User           Mailbox                             AccessRights
+-----         ----           -------                             ------------
+jdoe          Doe, John      fake-mb-1:\Calendar                 {Editor}
+jdoe          Doe, John      fake-mb-2:\Calendar                 {PublishingEditor}
+jdoe          Doe, John      fake-mb-3:\Calendar                 {Owner}
 ```
 
-{{ Add example description here }}
+This returns all the places where a user has been added to a mailbox calendar folder.
+
+### Example 2
+```powershell
+PS C:\> "jdoe" | Get-TAMUUserCalendarFolderPermission
+NetID         User           Mailbox                             AccessRights
+-----         ----           -------                             ------------
+jdoe          Doe, John      fake-mb-1:\Calendar                 {Editor}
+jdoe          Doe, John      fake-mb-2:\Calendar                 {PublishingEditor}
+jdoe          Doe, John      fake-mb-3:\Calendar                 {Owner}
+```
+
+This also returns all the places where a user has been added to a mailbox calendar folder.
 
 ## PARAMETERS
 

@@ -17,12 +17,18 @@ The Get-TAMUResourceMember function returns all users of a shared resource in Ex
 ## EXAMPLES
 
 ### Example 1
-
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-TAMUResourceMember -Resource "fake-mb-1"
 ```
 
-{{ Add example description here }}
+This returns the membership of a single mailbox.
+
+### Example 2
+```powershell
+PS C:\> Get-TAMUResourceMember -Resource "fake-mb-1","fake-mb-2"
+```
+
+This returns the membership of multiple mailboxes.
 
 ## PARAMETERS
 

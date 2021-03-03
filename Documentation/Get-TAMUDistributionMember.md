@@ -17,12 +17,18 @@ The Get-TAMUDistributionMember function returns all users of one or more distrib
 ## EXAMPLES
 
 ### Example 1
-
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-TAMUDistributionMember -Distribution "fake-dl-1"
 ```
 
-{{ Add example description here }}
+This returns the membership of a single distribution.
+
+### Example 2
+```powershell
+PS C:\> Get-TAMUDistributionMember -Distribution "fake-dl-1","fake-dl-2"
+```
+
+This returns the membership of multiple distributions.
 
 ## PARAMETERS
 

@@ -17,12 +17,18 @@ The Get-TAMUUserResourceMembership function returns all shared mailboxes for a u
 ## EXAMPLES
 
 ### Example 1
-
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-TAMUUserResourceMembership -NetID "jdoe"
 ```
 
-{{ Add example description here }}
+This will return all TAMU Exchange resources that user 'jdoe' is a member of.
+
+### Example 2
+```powershell
+PS C:\> "jdoe" | Get-TAMUUserResourceMembership
+```
+
+This will also return all TAMU Exchange resources that user 'jdoe' is a member of.
 
 ## PARAMETERS
 

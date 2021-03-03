@@ -17,12 +17,18 @@ The Enter-TAMUExchange function enters Exchange Admin Center.
 ## EXAMPLES
 
 ### Example 1
-
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Enter-TAMUExchange
 ```
 
-{{ Add example description here }}
+This will prompt you for your NetID and password, then connect you to exchange.
+
+### Example 2
+```powershell
+PS C:\> Enter-TAMUExchange -Credential auth\johndoe
+```
+
+This will prompt you for your NetID password, with the username portion already filled out, then connect you to exchange.
 
 ## PARAMETERS
 

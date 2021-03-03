@@ -8,6 +8,10 @@
     2. Remove all mailbox permissions for all shared mailboxes
     3. Add all mailboxes back with full permissions and set the automap flag to true
 
+.EXAMPLE
+    PS> Set-AutoMappingTrue -NetID "jdoe"
+    This will remove user jdoe from all their resources and re-add them, with auto-mapping turned ON.
+
 .PARAMETER NetID
     TAMU NetID
 

@@ -17,12 +17,18 @@ The Get-TAMUUserDetails function will return the user detail information from Ex
 ## EXAMPLES
 
 ### Example 1
-
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-TAMUUserDetail -Identity 123004567
 ```
 
-{{ Add example description here }}
+Gets user data for user 123004567.
+
+### Example 2
+```powershell
+PS C:\> Get-TAMUUserDetail -Identity 123004567,NetID1,NetID2
+```
+
+Gets user data for users 123004567, NetID1, and NetID2.
 
 ## PARAMETERS
 

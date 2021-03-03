@@ -5,6 +5,14 @@
 .DESCRIPTION
     The Get-TAMUDistributionMember function returns all users of one or more distribution groups from Exchange Admin Center.
 
+.EXAMPLE
+    PS> Get-TAMUDistributionMember -Distribution "fake-dl-1"
+    This returns the membership of a single distribution.
+
+.EXAMPLE
+    PS> Get-TAMUDistributionMember -Distribution "fake-dl-1","fake-dl-2"
+    This returns the membership of multiple distributions.
+
 .PARAMETER Distribution
     TAMU Distribution
 

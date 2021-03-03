@@ -17,12 +17,32 @@ The Remove-TAMUResourceMember function removes a user from a shared mailbox in E
 ## EXAMPLES
 
 ### Example 1
-
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Remove-TAMUResourceMember -NetID "jondoe" -Resource "fake-mb-1"
 ```
 
-{{ Add example description here }}
+This removes a single user from a single mailbox.
+
+### Example 2
+```powershell
+PS C:\> Remove-TAMUResourceMember -NetID "jondoe" -Resource "fake-mb-1","fake-mb-2"
+```
+
+This removes a single user from multiple mailboxes.
+
+### Example 3
+```powershell
+PS C:\> Remove-TAMUResourceMember -NetID "jondoe","janedoe" -Resource "fake-mb-1"
+```
+
+This removes multiple users from a single mailbox.
+
+### Example 4
+```powershell
+PS C:\> Remove-TAMUResourceMember -NetID "jondoe" -Resource "fake-mb-1"
+```
+
+This removes multiple users from multiple mailboxes.
 
 ## PARAMETERS
 
