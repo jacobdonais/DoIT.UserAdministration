@@ -119,33 +119,6 @@ Function New-DSAUser {
             ValueFromPipelineByPropertyName,
             Mandatory = $true)]
         [ValidateSet(
-            "Disability Resources",
-            "Counseling & Psychological Services",
-            "DSA Student Organizations",
-            "Office of the VP for Student Affairs",
-            "University Art Collections & Exhibitions",
-            "Student Life",
-            "University Center and Special Events",
-            "Student Health Services",
-            "Student Life Studies",
-            "Memorial Student Center",
-            "Recreational Sports",
-            "Music Activities",
-            "Multicultural Services",
-            "Student Affairs Development Office",
-            "Corps of Cadets",
-            "Student Affairs IT",
-            "Residence Life",
-            "Student Activities",
-            "Children's Center"
-        )]
-        [ValidateNotNullOrEmpty()]
-        [string]$Department,
-
-        [Parameter(
-            ValueFromPipelineByPropertyName,
-            Mandatory = $true)]
-        [ValidateSet(
             "BGCC - Staff",
             "BGCC - Student Worker",
             "BGCC - Teacher",
@@ -374,8 +347,8 @@ Function New-DSAUser {
             "UCSE - RTC Special Events Student Worker",
             "UCSE - Theater Operations Default",
 
-            "VSRC - Staff",
-            "VSRC - Student Worker"
+            "VRSC - Staff",
+            "VRSC - Student Worker"
         )]
         [ValidateNotNullOrEmpty()]
         [string]$FunctionalGroup,
@@ -421,6 +394,32 @@ Function New-DSAUser {
         Write-Verbose "Load Department Table..."
         . $PSScriptRoot\..\Resources\NewDSAUser\NewUserDepartmentTable.ps1
 
+        # Load Departments
+        $Departments = @{
+            DR = "Disability Resources"
+            CAPS = "Counseling & Psychological Services"
+            VPSA = "Office of the VP for Student Affairs"
+            MARCOMM = "Office of the VP for Student Affairs"
+            VRSC = "Office of the VP for Student Affairs"
+            UCSE = "University Art Collections & Exhibitions"
+            DSL = "Student Life"
+            UART = "University Center and Special Events"
+            SHS = "Student Health Services"
+            SLS = "Student Life Studies"
+            MSC = "Memorial Student Center"
+            REC = "Recreational Sports"
+            MUSA = "Music Activities"
+            DMS = "Multicultural Services"
+            OOC = "Corps of Cadets"
+            AFROTC = "Corps of Cadets"
+            NROTC = "Corps of Cadets"
+            AAROTC = "Corps of Cadets"
+            DOIT = "Student Affairs IT"
+            DRL = "Residence Life"
+            SACT = "Student Activities"
+            BGCC = "Children's Center"
+        }
+
         # Make sure user has sufficient permissions to run this script
         Write-Verbose "..Check if user has sufficient permissions to run this script"
         $CurrentUserDisplayName = Get-ADUser -Identity $env:USERNAME -Properties DisplayName | Select-Object -ExpandProperty DisplayName
@@ -435,6 +434,12 @@ Function New-DSAUser {
     }
 
     PROCESS {
+        $DepartmentRegex = '^(?<DEPARTMENT>.+) - .*'
+        if (!($FunctionalGroup -match $DepartmentRegex)) {
+            throw "Error with Functional Group"
+        }
+        $Department = $Departments[$Matches["Department"]]
+
         ### Step 0b (Prep): Adjust and validate input values ###
         if ($ClaimMailbox) {
             if (-not($UIN)) {

@@ -56,13 +56,13 @@ $UserLocation = @{
 		    Groups = "OVP Student Workers"
 		    Win10OU = "OU=Secure Win10 Users,OU=Office of the Vice President,OU=Departments,OU=Student Affairs,DC=dsa,DC=reldom,DC=tamu,DC=edu"
         }
-        "VSRC - Staff" = @{
+        "VRSC - Staff" = @{
 		    HomeDriveText = "\\dsa.reldom.tamu.edu\Student Affairs\Departments\Veterans Services\Staff\"
 		    ProfilePath = "\\dsa.reldom.tamu.edu\Users\Profiles\VRSC\"
 		    Groups = "VS Staff"
 		    Win10OU = "OU=Secure Win10 Users,OU=Veteran Resource and Support Center,OU=Departments,OU=Student Affairs,DC=dsa,DC=reldom,DC=tamu,DC=edu"
         }
-        "VSRC - Student Worker" = @{
+        "VRSC - Student Worker" = @{
 		    HomeDriveText = "\\dsa.reldom.tamu.edu\Student Affairs\Departments\Veterans Services\Staff\"
 		    ProfilePath = "\\dsa.reldom.tamu.edu\Users\Profiles\VRSC\"
 		    Groups = "VS Student Workers"
