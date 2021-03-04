@@ -1089,30 +1089,30 @@ $UserLocation = @{
 		    ProfilePath = "\\dsa.reldom.tamu.edu\Users\Profiles\DRL\"
 		    Groups = "DRL North Area Office Student Workers"
 		    Win10OU = "OU=Secure Win10 Users,OU=North Area Office,OU=Residence Life,OU=Departments,OU=Student Affairs,DC=dsa,DC=reldom,DC=tamu,DC=edu"
-        }
-        "DRL - Residence Halls Apartment Default" = @{
+		}
+        "DRL - Residence Halls Default" = @{
 		    HomeDriveText = "\\dsa.reldom.tamu.edu\Student Affairs\Departments\Residence Life\Staff\"
 		    ProfilePath = "\\dsa.reldom.tamu.edu\Users\Profiles\DRL\"
 		    Groups = ""
 		    Win10OU = "OU=Secure Win10 Users,OU=Residence Halls,OU=Residence Life,OU=Departments,OU=Student Affairs,DC=dsa,DC=reldom,DC=tamu,DC=edu"
-        }
-        "DRL - Residence Halls Apartment Residence Advisor" = @{
-		    HomeDriveText = "\\dsa.reldom.tamu.edu\Student Affairs\Departments\Residence Life\Staff\"
-		    ProfilePath = "\\dsa.reldom.tamu.edu\Users\Profiles\DRL\"
-		    Groups = "DRL Resident Advisors"
-		    Win10OU = "OU=Resident Advisors,OU=Secure Win10 Users,OU=Residence Halls,OU=Residence Life,OU=Departments,OU=Student Affairs,DC=dsa,DC=reldom,DC=tamu,DC=edu"
-        }
-        "DRL - Residence Halls Apartment Hall Director" = @{
-		    HomeDriveText = "\\dsa.reldom.tamu.edu\Student Affairs\Departments\Residence Life\Staff\"
-		    ProfilePath = "\\dsa.reldom.tamu.edu\Users\Profiles\DRL\"
-		    Groups = "DRL Community Directors"
-		    Win10OU = "OU=Hall Directors,OU=Secure Win10 Users,OU=Residence Halls,OU=Residence Life,OU=Departments,OU=Student Affairs,DC=dsa,DC=reldom,DC=tamu,DC=edu"
         }
         "DRL - Residence Halls Apartment Resident Advisor" = @{
 		    HomeDriveText = "\\dsa.reldom.tamu.edu\Student Affairs\Departments\Residence Life\Staff\"
 		    ProfilePath = "\\dsa.reldom.tamu.edu\Users\Profiles\DRL\"
 		    Groups = "DRL University Apartments RAs"
 		    Win10OU = "OU=Apartment Resident Advisor,OU=Secure Win10 Users,OU=Residence Halls,OU=Residence Life,OU=Departments,OU=Student Affairs,DC=dsa,DC=reldom,DC=tamu,DC=edu"
+        }
+        "DRL - Residence Halls Hall Director" = @{
+		    HomeDriveText = "\\dsa.reldom.tamu.edu\Student Affairs\Departments\Residence Life\Staff\"
+		    ProfilePath = "\\dsa.reldom.tamu.edu\Users\Profiles\DRL\"
+		    Groups = "DRL Community Directors"
+		    Win10OU = "OU=Hall Directors,OU=Secure Win10 Users,OU=Residence Halls,OU=Residence Life,OU=Departments,OU=Student Affairs,DC=dsa,DC=reldom,DC=tamu,DC=edu"
+        }
+        "DRL - Residence Halls Resident Advisor" = @{
+		    HomeDriveText = "\\dsa.reldom.tamu.edu\Student Affairs\Departments\Residence Life\Staff\"
+		    ProfilePath = "\\dsa.reldom.tamu.edu\Users\Profiles\DRL\"
+		    Groups = "DRL Resident Advisors"
+		    Win10OU = "OU=Resident Advisors,OU=Secure Win10 Users,OU=Residence Halls,OU=Residence Life,OU=Departments,OU=Student Affairs,DC=dsa,DC=reldom,DC=tamu,DC=edu"
         }
         "DRL - Shared Accounts Default" = @{
 		    HomeDriveText = "\\dsa.reldom.tamu.edu\Student Affairs\Departments\Residence Life\Staff\"
