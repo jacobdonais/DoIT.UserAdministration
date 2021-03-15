@@ -161,11 +161,9 @@ Function New-TAMUMailbox {
             Write-Verbose "....Attempt $count"
             $Addresses = Get-TAMUExternalAddresses -UIN $UIN
             if ($Addresses) {
-                foreach ($Address in $Addresses) {
-                    if ($Address.Address -eq "$Username@dsa.tamu.edu") {
-                        Write-Verbose "....Address Confirmed"
-                        $IsDefaultAddressAdded = $true
-                    }
+                if ($Addresses -contains "$Username@dsa.tamu.edu") {
+                    Write-Verbose "....Address Confirmed"
+                    $IsDefaultAddressAdded = $true
                 }
             }
             else {
@@ -194,11 +192,9 @@ Function New-TAMUMailbox {
                 Write-Verbose "....Attempt $count"
                 $Addresses = Get-TAMUExternalAddresses -UIN $UIN
                 if ($Addresses) {
-                    foreach ($Address in $Addresses) {
-                        if ($Address.Address -eq "$Username@$EmailDomain") {
-                            Write-Verbose "....Address Confirmed"
-                            $IsOptionalAddressAdded = $true
-                        }
+                    if ($Addresses -contains "$Username@$EmailDomain") {
+                        Write-Verbose "....Address Confirmed"
+                        $IsOptionalAddressAdded = $true
                     }
                 }
                 else {
