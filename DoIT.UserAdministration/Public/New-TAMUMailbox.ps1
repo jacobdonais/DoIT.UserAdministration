@@ -146,7 +146,11 @@ Function New-TAMUMailbox {
         # Step 3: Add dsa address
         Write-Verbose "..Adding dsa email address"
         if (!(Add-TAMUExternalAddresses -UIN $UIN -UserName $UserName -Default)) {
-            throw "Failed to add DSA email address"
+            Start-Sleep -Seconds 5
+            Write-Verbose "..Final Attempt: Adding dsa email address"
+            if (!(Add-TAMUExternalAddresses -UIN $UIN -UserName $UserName -Default)) {
+                throw "Failed to add DSA email address"
+            }
         }
 
         # Step 4: Confirm email address
@@ -175,7 +179,11 @@ Function New-TAMUMailbox {
             # Step 5: Add optional email domain
             Write-Verbose "..Adding optional email address"
             if (!(Add-TAMUExternalAddresses -UIN $UIN -UserName $UserName -EmailDomain $EmailDomain -Default)) {
-                throw "Failed to add optional email address"
+                Start-Sleep -Seconds 5
+                Write-Verbose "..Final Attempt: Adding optional email address"
+                if (!(Add-TAMUExternalAddresses -UIN $UIN -UserName $UserName -EmailDomain $EmailDomain -Default)) {
+                    throw "Failed to add optional email address"
+                }
             }
 
             # Step 6: Confirm email address
