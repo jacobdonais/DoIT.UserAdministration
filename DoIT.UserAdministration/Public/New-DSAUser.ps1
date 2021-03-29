@@ -413,7 +413,7 @@ Function New-DSAUser {
             OOC = "Corps of Cadets"
             AFROTC = "Corps of Cadets"
             NROTC = "Corps of Cadets"
-            AAROTC = "Corps of Cadets"
+            ARROTC = "Corps of Cadets"
             DOIT = "Student Affairs IT"
             DRL = "Residence Life"
             SACT = "Student Activities"
