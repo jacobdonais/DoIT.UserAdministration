@@ -100,13 +100,13 @@ $UserLocation = @{
 		    HomeDriveText = "\\dsa.reldom.tamu.edu\Student Affairs\Departments\Student Life\Staff\"
 		    ProfilePath = "\\dsa.reldom.tamu.edu\Users\Profiles\ODSL\"
 		    Groups = "DSL Dean's Office","DSL Staff"
-		    Win10OU = "OU=Secure Win10 Users,OU=Dean""s Office,OU=Student Life,OU=Departments,OU=Student Affairs,DC=dsa,DC=reldom,DC=tamu,DC=edu"
+		    Win10OU = "OU=Secure Win10 Users,OU=Dean's Office,OU=Student Life,OU=Departments,OU=Student Affairs,DC=dsa,DC=reldom,DC=tamu,DC=edu"
         }
         "DSL - Deans Office Student Worker" = @{
 		    HomeDriveText = "\\dsa.reldom.tamu.edu\Student Affairs\Departments\Student Life\Staff\"
 		    ProfilePath = "\\dsa.reldom.tamu.edu\Users\Profiles\ODSL\"
 		    Groups = "DSL Dean's Office Student Workers"
-		    Win10OU = "OU=Secure Win10 Users,OU=Dean""s Office,OU=Student Life,OU=Departments,OU=Student Affairs,DC=dsa,DC=reldom,DC=tamu,DC=edu"
+		    Win10OU = "OU=Secure Win10 Users,OU=Dean's Office,OU=Student Life,OU=Departments,OU=Student Affairs,DC=dsa,DC=reldom,DC=tamu,DC=edu"
         }
         "DSL - Graduate & Professional Student Government Staff" = @{
 		    HomeDriveText = "\\dsa.reldom.tamu.edu\Student Affairs\Departments\Student Life\Staff\"
