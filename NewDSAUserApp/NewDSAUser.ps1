@@ -130,15 +130,19 @@ Function IsValidPhoneNumber {
 }
 
 Function IsClaimMailbox {
-    return $var_ClaimMailbox_CheckBox.IsChecked
+    return $var_ClaimMailbox_CheckBox.IsChecked -and $var_ClaimMailbox_CheckBox.IsEnabled
 }
 
 Function GetEmailDomain {
     return ($var_EmailDomain_DropBox.SelectedItem)
 }
 
-Function GetEndDate {
+Function IsEndDate {
+    return ($var_EndDate_CheckBox.IsChecked) -and ((GetEndDate) -match "([1-9]|0[1-9]|1[012])/([1-9]|0[1-9]|[12][0-9]|3[01])/(19|20)[0-9]{2}")
+}
 
+Function GetEndDate {
+    return ($var_EndDate_DatePicker.Text)
 }
 
 Function CreateUsername {
@@ -147,7 +151,62 @@ Function CreateUsername {
             if (GetLastName -ne "") {
                 $firstName = (GetFirstName).ToLower()
                 $lastName = (GetLastName).ToLower()
-                return ($firstName[0] + "-" + $lastName)
+                switch (GetDepartment) {
+                    "Disability Resources" {
+                        return ($firstName + $lastName[0])
+                    }
+                    "Counseling & Psychological Services" {
+                        return ($firstName[0] + $lastName)
+                    }
+                    "Office of the VP for Student Affairs" {
+                        return ($firstName + $lastName[0])
+                    }
+                    "University Art Collections & Exhibitions" {
+                        return ($firstName[0] + $lastName)
+                    }
+                    "Student Life" {
+                        return ($firstName + $lastName[0])
+                    }
+                    "University Center and Special Events" {
+                        return ($firstName[0] + "-" + $lastName)
+                    }
+                    "Student Health Services" {
+                        return ($firstName[0] + $lastName)
+                    }
+                    "Student Life Studies" {
+                        return ($firstName[0] + $lastName)
+                    }
+                    "Memorial Student Center" {
+                        return ($firstName[0] + $lastName)
+                    }
+                    "Recreational Sports" {
+                        return ($firstName[0] + $lastName)
+                    }
+                    "Music Activities" {
+                        return ($firstName[0] + $lastName)
+                    }
+                    "Multicultural Services" {
+                        return ($firstName[0] + $lastName)
+                    }
+                    "Corps of Cadets" {
+                        return ($firstName[0] + $lastName)
+                    }
+                    "Student Affairs IT" {
+                        return ($firstName + $lastName[0])
+                    }
+                    "Residence Life" {
+                        return ($firstName + "_" + $lastName)
+                    }
+                    "Student Activities" {
+                        return ($firstName[0] + $lastName)
+                    }
+                    "Children's Center" {
+                        return ($firstName[0] + $lastName)
+                    }
+                    default {
+                        return ($firstName[0] + "-" + $lastName)
+                    }
+                }
             }
         }
     }
@@ -262,6 +321,8 @@ $var_Username_TextBox.add_TextChanged({
     else {
         $var_Username_TextBox.Background = "#FFFFFF"
     }
+
+    IsValidRequest
 })
 
 # Add all emails to the combo box if box is checked
@@ -360,6 +421,22 @@ $var_ClaimMailbox_CheckBox.Add_Click({
         $var_EmailDomain_DropBox.Items.Clear()
         $var_EmailDomain_DropBox.Text = ""
     }
+    IsValidRequest
+})
+
+# Enable/disble end date
+$var_EndDate_CheckBox.Add_Click({
+    if ($var_EndDate_CheckBox.IsChecked -eq $true) {
+        $var_EndDate_DatePicker.IsEnabled = $true
+    }
+    else {
+        $var_EndDate_DatePicker.IsEnabled = $false
+    }
+    IsValidRequest
+})
+
+$var_EndDate_DatePicker.Add_SelectedDateChanged({
+    IsValidRequest
 })
 
 # Check if the submit button should be enabled
@@ -400,13 +477,11 @@ $var_Submit_Button.Add_Click({
     $PhoneNumber = GetPhoneNumber # Optional
     $Office = GetLocation # Optional
     $FunctionalGroup = GetFunctionalGroup # Required
-    $EmailDomain = GetEmailDomain # Optional
+    $EmailDomain = if (IsClaimMailbox) {GetEmailDomain} else {""} # Optional
     $ClaimMailbox = IsClaimMailbox # Optional
+    $EndDate = if (IsEndDate) {GetEndDate} else {""} # Optional
 
-
-
-
-    Write-Host "-Username $Username -FirstName $FirstName -LastName $LastName -UIN $UIN -NetID $NetID -Title $Title -PhoneNumber $PhoneNumber -Office $Office -FunctionalGroup $FunctionalGroup -EmailDomain $EmailDomain -ClaimMailbox $ClaimMailbox"
+    Write-Host "-Username $Username -FirstName $FirstName -LastName $LastName -UIN $UIN -NetID $NetID -Title $Title -PhoneNumber $PhoneNumber -Office $Office -FunctionalGroup $FunctionalGroup -EmailDomain $EmailDomain -ClaimMailbox $ClaimMailbox -EndDate $EndDate"
     # New-DSAUser -Username -FirstName -LastName -UIN -NetID -Title -PhoneNumber -Office -FunctionalGroup -EmailDomain -ClaimMailbox
 })
 

@@ -31,7 +31,7 @@
         <CheckBox x:Name="ClaimMailbox_CheckBox" Content="Claim Mailbox?" HorizontalAlignment="Left" Margin="378,321,0,0" VerticalAlignment="Top" IsEnabled="False" IsChecked="False"/>
         <ComboBox x:Name="EmailDomain_DropBox" HorizontalAlignment="Left" Margin="173,317,0,0" VerticalAlignment="Top" Width="200" Height="24" IsEnabled="False"/>
         <Label x:Name="EmailDomain_TextLabel" Content="Email Domain:" HorizontalAlignment="Left" Margin="88,315,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="EndDate_CheckBox" Content="End Date?" HorizontalAlignment="Left" Margin="378,352,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+        <CheckBox x:Name="EndDate_CheckBox" Content="End Date?" HorizontalAlignment="Left" Margin="378,352,0,0" VerticalAlignment="Top" IsEnabled="True"/>
         <DatePicker x:Name="EndDate_DatePicker" HorizontalAlignment="Left" Margin="173,348,0,0" VerticalAlignment="Top" Width="200" IsEnabled="False"/>
         <Label x:Name="EndDate_TextLabel" Content="End Date, if applicable:" HorizontalAlignment="Left" Margin="44,346,0,0" VerticalAlignment="Top"/>
         <Button x:Name="Submit_Button" Content="Submit" HorizontalAlignment="Left" Margin="150,415,0,0" VerticalAlignment="Top" Width="198" Height="35" IsEnabled="False"/>
