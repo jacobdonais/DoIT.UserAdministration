@@ -1,0 +1,40 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="NewDSAUser" Height="550" Width="500">
+    <Grid>
+        <TextBox x:Name="UIN_TextBox" HorizontalAlignment="Left" Height="24" Margin="173,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <Label x:Name="UIN_TextLabel" Content="UIN if known:" HorizontalAlignment="Left" Margin="92,7,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="GetUserInfo_Button" Content="Get User Info" HorizontalAlignment="Left" Margin="378,10,0,0" VerticalAlignment="Top" Width="82" IsEnabled="False"/>
+        <TextBox x:Name="NetID_TextBox" HorizontalAlignment="Left" Height="24" Margin="173,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <Label x:Name="NetID_TextLabel" Content="NetID if known:" HorizontalAlignment="Left" Margin="82,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.014,0.538"/>
+        <TextBox x:Name="FirstName_TextBox" HorizontalAlignment="Left" Height="24" Margin="173,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <Label x:Name="FirstName_TextLabel" Content="First Name:" HorizontalAlignment="Left" Margin="104,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.486,0.644"/>
+        <TextBox x:Name="LastName_TextBox" HorizontalAlignment="Left" Height="24" Margin="173,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <Label x:Name="LastName_TextLabel" Content="Last Name:" HorizontalAlignment="Left" Margin="106,100,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="Department_DropBox" HorizontalAlignment="Left" Margin="174,133,0,0" VerticalAlignment="Top" Width="200" Height="24"/>
+        <Label x:Name="Department_TextLabel" Content="Department:" HorizontalAlignment="Left" Margin="98,131,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="FunctionalGroup_DropBox" HorizontalAlignment="Left" Margin="174,164,0,0" VerticalAlignment="Top" Width="200" Height="24" IsEnabled="False"/>
+        <Label x:Name="FunctionalGroup_TextLabel" Content="Functional Group:" HorizontalAlignment="Left" Margin="70,162,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Username_TextBox" HorizontalAlignment="Left" Height="24" Margin="173,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Background="#FFFFFF"/>
+        <Label x:Name="Username_TextLabel" Content="Username:" HorizontalAlignment="Left" Margin="108,193,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="JobTitle_TextBox" HorizontalAlignment="Left" Height="24" Margin="173,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <Label x:Name="JobTitle_TextLabel" Content="Job Title:" HorizontalAlignment="Left" Margin="118,224,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Office_TextBox" HorizontalAlignment="Left" Height="24" Margin="173,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <Label x:Name="Office_TextLabel" Content="Office Bldg/Room Number:" HorizontalAlignment="Left" Margin="20,253,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Phone_TextBox" HorizontalAlignment="Left" Height="24" Margin="173,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <Label x:Name="Phone_TextLabel" Content="Office Phone Number:" HorizontalAlignment="Left" Margin="46,284,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="ClaimMailbox_CheckBox" Content="Claim Mailbox?" HorizontalAlignment="Left" Margin="378,321,0,0" VerticalAlignment="Top" IsEnabled="False" IsChecked="False"/>
+        <ComboBox x:Name="EmailDomain_DropBox" HorizontalAlignment="Left" Margin="173,317,0,0" VerticalAlignment="Top" Width="200" Height="24" IsEnabled="False"/>
+        <Label x:Name="EmailDomain_TextLabel" Content="Email Domain:" HorizontalAlignment="Left" Margin="88,315,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="EndDate_CheckBox" Content="End Date?" HorizontalAlignment="Left" Margin="378,352,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+        <DatePicker x:Name="EndDate_DatePicker" HorizontalAlignment="Left" Margin="173,348,0,0" VerticalAlignment="Top" Width="200" IsEnabled="False"/>
+        <Label x:Name="EndDate_TextLabel" Content="End Date, if applicable:" HorizontalAlignment="Left" Margin="44,346,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Submit_Button" Content="Submit" HorizontalAlignment="Left" Margin="150,415,0,0" VerticalAlignment="Top" Width="198" Height="35" IsEnabled="False"/>
+
+    </Grid>
+</Window>
