@@ -80,6 +80,7 @@ Function Enter-TAMUGateway {
             Write-Verbose "Sending DUO push..."
             Write-Output "Check phone for DUO push"
             $Global:Driver.SwitchTo().frame($DUO_iframe) | Out-Null
+            Start-Sleep -Seconds 5 # The frame for DUO push is grayed out
             (Find-SeElement -Driver $Global:Driver -TagName "button" | Where-Object { $_.text -eq "Send Me a Push" }).Click()
 
             ### Step 5: Handle DUO Timeout ###

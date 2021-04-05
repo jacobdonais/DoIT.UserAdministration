@@ -385,7 +385,19 @@ Function New-DSAUser {
             ValueFromPipelineByPropertyName,
             Mandatory = $false,
             ParameterSetName = 'ClaimMailbox')]
-        [switch]$ClaimMailbox
+        [switch]$ClaimMailbox,
+
+        [Parameter(
+            ValueFromPipelineByPropertyName,
+            Mandatory = $false)]
+        [ValidateScript( {
+                if ($_ -notmatch "([1-9]|0[1-9]|1[012])/([1-9]|0[1-9]|[12][0-9]|3[01])/(19|20)[0-9]{2}") {
+                    throw "Only valid dates are allowed mm/dd/yyyy"
+                }
+                else { $true }
+            })]
+        [ValidateNotNullOrEmpty()]
+        [string]$EndDate
     )
 
     BEGIN {
@@ -638,6 +650,17 @@ Function New-DSAUser {
         catch {
             throw "Failed to add AD Groups"
         }
+
+        if ($EndDate) {
+            Write-Verbose "..Setting end date..."
+            try {
+                Set-ADAccountExpiration -Identity $UserName -DateTime $EndDate
+            }
+            catch {
+                throw "Failed to set end date"
+            }
+        }
+        
 
         ### Step 6 (Final): Output important information ###
         # Output Important Information
