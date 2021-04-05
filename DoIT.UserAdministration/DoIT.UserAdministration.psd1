@@ -97,6 +97,7 @@
         'Get-TAMUUserResourceMembership',
         'New-DSARandomPassword',
         'New-DSAUser',
+        'NewDSAUser',
         'New-TAMUMailbox',
         'Remove-TAMUContactFor',
         'Remove-TAMUDistributionGroups',

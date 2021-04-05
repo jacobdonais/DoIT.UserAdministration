@@ -217,7 +217,7 @@
     ## General Events
     # Disables/Enables the get user info button
     $var_UIN_TextBox.add_TextChanged({
-        $uin = $var_UIN_TextBox.Text
+        $uin = GetUIN
         if ($uin -match "^[0-9]{3}00[0-9]{4}$") {
             $var_GetUserInfo_Button.IsEnabled = $true
             $var_ClaimMailbox_CheckBox.IsEnabled = $true
@@ -469,21 +469,48 @@
 
     # Submit button action
     $var_Submit_Button.Add_Click({
-        $Username = GetUsername # Required
-        $FirstName = GetFirstName # Required
-        $LastName = GetLastName # Required
-        $UIN = GetUIN # Optional, but required with Claim Mailbox
-        $NetID = GetNetID # Optional
-        $Title = GetJobTitle # Optional
-        $PhoneNumber = GetPhoneNumber # Optional
-        $Office = GetLocation # Optional
-        $FunctionalGroup = GetFunctionalGroup # Required
-        $EmailDomain = if (IsClaimMailbox) {GetEmailDomain} else {""} # Optional
-        $ClaimMailbox = IsClaimMailbox # Optional
-        $EndDate = if (IsEndDate) {GetEndDate} else {""} # Optional
+        $Request = @{
+            Username = (GetUsername) # Required
+            FirstName = (GetFirstName) # Required
+            LastName = (GetLastName) # Required
+            FunctionalGroup = (GetFunctionalGroup) # Required
+        }
+        if (GetUIN) {
+            $Request.UIN = (GetUIN)
+        }
+        if (GetNetID) {
+            $Request.NetID = (GetNetID)
+        }
+        if (GetJobTitle) {
+            $Request.Title = (GetJobTitle)
+        }
+        if (GetPhoneNumber) {
+            $Request.PhoneNumber = (GetPhoneNumber)
+        }
+        if (GetLocation) {
+            $Request.Office = (GetLocation)
+        }
 
-        Write-Host "-Username $Username -FirstName $FirstName -LastName $LastName -UIN $UIN -NetID $NetID -Title $Title -PhoneNumber $PhoneNumber -Office $Office -FunctionalGroup $FunctionalGroup -EmailDomain $EmailDomain -ClaimMailbox $ClaimMailbox -EndDate $EndDate"
-        New-DSAUser "-Username $Username -FirstName $FirstName -LastName $LastName -UIN $UIN -NetID $NetID -Title $Title -PhoneNumber $PhoneNumber -Office $Office -FunctionalGroup $FunctionalGroup -EmailDomain $EmailDomain -ClaimMailbox $ClaimMailbox -EndDate $EndDate"
+        $EmailDomain = if (IsClaimMailbox) {GetEmailDomain} else {""} # Optional
+        if ($EmailDomain) {
+            $Request.EmailDomain = $EmailDomain
+        }
+        
+        $EndDate = if (IsEndDate) {GetEndDate} else {""} # Optional
+        if ($EndDate) {
+            $Request.EndDate = $EndDate
+        }
+
+        $Request = New-Object PSCustomObject -Property $Request
+
+        $ClaimMailbox = IsClaimMailbox # Optional
+        if ($ClaimMailbox) {
+            Write-Host ($Request | New-DSAUser -ClaimMailbox)
+        }
+        else {
+            Write-Host ($Request | New-DSAUser)
+        }
+
     })
 
     $Null = $window.ShowDialog()
