@@ -503,14 +503,21 @@
 
         $Request = New-Object PSCustomObject -Property $Request
 
+        [reflection.assembly]::loadwithpartialname('System.Windows.Forms')
+        [reflection.assembly]::loadwithpartialname('System.Drawing')
+        $notify = new-object system.windows.forms.notifyicon
+        $notify.icon = [System.Drawing.SystemIcons]::Information
+        $notify.visible = $true
+        $notify.showballoontip(10,'PROCESSING','Processing the new user request. Please be patient...',[system.windows.forms.tooltipicon]::None)
+
         $ClaimMailbox = IsClaimMailbox # Optional
         if ($ClaimMailbox) {
-            Write-Host ($Request | New-DSAUser -ClaimMailbox)
+            $Request | New-DSAUser -ClaimMailbox | Out-Host
         }
         else {
-            Write-Host ($Request | New-DSAUser)
+            $Request | New-DSAUser | Out-Host
         }
-
+        
     })
 
     $Null = $window.ShowDialog()
