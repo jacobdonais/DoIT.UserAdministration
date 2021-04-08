@@ -69,21 +69,38 @@ Function Disable-DSAUser {
         # Get TAMU User Detail from EAC Get-TAMUUserDetail
         if (-not [string]::IsNullOrEmpty($ADUser.employeeid)) {
             ### Step 4a: Find the User in Exchange ###
-            $ExchangeUser = Get-TAMUUserDetail -Identity $ADUser.employeeid -Verbose:$Verbose
+            Write-Verbose "..Getting user details from Gateway"
+            $ExchangeUser = Get-TAMUUserDetails -UIN $ADUser.employeeid
         }
         if (-not [string]::IsNullOrEmpty($ExchangeUser) -and (Get-Recipient -Identity $ExchangeUser.NetID -ErrorAction SilentlyContinue)) {
             ### Step 4b: Collect Exchange Information ###
             # Get Distribution Groups, Resources, Aliases, Contact for, and mailbox claim
-            $Distributions = $ExchangeUser.DistributionGroupMembership | Where-Object -FilterScript { $_ -like "dg-dsa*" }
+            Write-Verbose "..Pulling Distribution groups"
+            $Distributions = Get-TAMUDistributionGroups -UIN $ADUser.employeeid
+            if ($Distributions -eq "User is not in any distribution groups.") {
+                $Distributions = $null
+            }
+
+            Write-Verbose "..Pulling Resources"
             $Resources = (Get-TAMUUserResourceMembership -NetID $ExchangeUser.NetID).resource
-            $Aliases = $ExchangeUser.BoutiqueAddress
-            $ContactFor = $ExchangeUser.ContactFor
-            $MailClaim = $ExchangeUser.MailboxClaim
+
+            Write-Verbose "..Pulling external addresses"
+            $Aliases = Get-TAMUExternalAddresses -UIN $ADUser.employeeid
+
+            Write-Verbose "..Pulling Contact For"
+            $ContactFor = (Get-TAMUContactFor -UIN $ADUser.employeeid).ContactFor
+            if ($ContactFor -eq "User is not a contact for any group.") {
+                $ContactFor = $null
+            }
+
+            Write-Verbose "..Pulling Mailbox Claim"
+            $MailClaim = (Get-TAMUMailboxClaims -UIN $ADUser.employeeid).Organization
 
             ### Step 4c: Remove Distribution Groups ###
+            Write-Verbose "..Removing Distribution Groups"
             if (-not [string]::IsNullOrEmpty($Distributions)) {
                 try {
-                    Remove-TAMUDistributionMember -NetID $ExchangeUser.NetID -Distribution $Distributions
+                    Remove-TAMUDistributionGroups -UIN $ExchangeUser.UIN -DistributionLists $Distributions -Department $MailClaim
                 }
                 catch {
                     throw "Failed to remove distribution member"
@@ -91,6 +108,7 @@ Function Disable-DSAUser {
             }
 
             ### Step 4d: Remove Shared Resources ###
+            Write-Verbose "..Removing Resource Membership"
             if (-not [string]::IsNullOrEmpty($resources)) {
                 try {
                     Remove-TAMUResourceMember -NetID $ExchangeUser.NetID -Resource $Resources
@@ -101,9 +119,10 @@ Function Disable-DSAUser {
             }
 
             ### Step 4e: Remove Contact For ###
+            Write-Verbose "..Removing Contact For"
             if (-not [string]::IsNullOrEmpty($ContactFor)) {
                 try {
-                    Remove-TAMUMailContact -UIN $ExchangeUser.UIN -ContactFor $ContactFor -Verbose:$Verbose -ErrorAction Stop
+                    Remove-TAMUContactFor -UIN $ExchangeUser.UIN -Department $ContactFor
                 }
                 catch {
                     throw "Failed to remove mail contact"
@@ -111,9 +130,10 @@ Function Disable-DSAUser {
             }
 
             ### Step 4f: Remove Mailbox Claim ###
+            Write-Verbose "Removing Mailbox Claim"
             if (-not [string]::IsNullOrEmpty($MailClaim)) {
                 try {
-                    Remove-TAMUMailbox -UIN $ExchangeUser.UIN -Verbose:$Verbose -ErrorAction Stop
+                    Remove-TAMUMailboxClaim -UIN $ExchangeUser.UIN -Department $MailClaim
                 }
                 catch {
                     throw "Failed to remove mailbox"
@@ -125,13 +145,13 @@ Function Disable-DSAUser {
         # Output DisableUserMSG
         $NoteOutput = $NoteOutput -replace "===USERNAME===", $UserName
         $NoteOutput = $NoteOutput -replace "===OU===", $ADUser.CanonicalName
-        $NoteOutput = $NoteOutput -replace "===ADGROUPS===", $ADGroups
+        $NoteOutput = $NoteOutput -replace "===ADGROUPS===", ($ADGroups -join "`n")
         $NoteOutput = $NoteOutput -replace "===EMAILADDRESS===", $ADUser.EmailAddress
         $NoteOutput = $NoteOutput -replace "===CONTACTFOR===", $ContactFor
         $NoteOutput = $NoteOutput -replace "===MAILBOXCLAIM===", $MailClaim
-        $NoteOutput = $NoteOutput -replace "===DISTRIBUTIONS===", $Distributions
+        $NoteOutput = $NoteOutput -replace "===DISTRIBUTIONS===", ($Distributions -join "`n")
         $NoteOutput = $NoteOutput -replace "===RESOURCES===", $Resources
-        $NoteOutput = $NoteOutput -replace "===ALIASES===", $Aliases
+        $NoteOutput = $NoteOutput -replace "===ALIASES===", ($Aliases -join "`n")
         $NoteOutput = $NoteOutput -replace "===NAME===", $ADUser.Name
         Write-Output $NoteOutput
     }

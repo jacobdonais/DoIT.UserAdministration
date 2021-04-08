@@ -103,7 +103,8 @@ Function Remove-TAMUDistributionGroups {
 
         ### Step 3: Select Department ###
         Write-Verbose "..Selecting the department $Department"
-        (Find-SeElement -Driver $Global:Driver -XPath "/html/body/div/div[2]/div/div/ul/li//a[contains(text(),'$Department')]").Click()
+        $DepartmentElement = (Find-SeElement -Driver $Global:Driver -XPath "/html/body/div/div[2]/div/div/ul/li//a[normalize-space(text())='TAMU - $Department']")
+        $DepartmentElement.Click()
 
         ### Step 4: Select DLs
         Write-Verbose "..Selecting the Distribution Lists"

@@ -52,6 +52,6 @@ Function Get-TAMUDistributionGroups {
         if ($DistributionGroups -ne "User is not in any distribution groups.") {
             $DistributionGroups = $DistributionGroups -split "`n"
         }
-        $DistributionGroups
+        return $DistributionGroups.Trim()
     }
 }

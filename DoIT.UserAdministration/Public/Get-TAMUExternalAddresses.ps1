@@ -49,8 +49,6 @@ Function Get-TAMUExternalAddresses {
 
         ### Step 2: Get External Address ###
         $Emails = (Find-SeElement -Driver $Global:Driver -XPath '/html/body/div/div[2]/div[2]/div/table/tbody/tr/td[1]').Text
-        foreach ($Email in $Emails) {
-            $Email
-        }
+        return $Emails
     }
 }
