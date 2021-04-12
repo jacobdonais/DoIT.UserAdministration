@@ -1,4 +1,4 @@
-﻿Function NewDSAUser {
+﻿Function NewDSAUserGUI {
     Add-Type -AssemblyName PresentationFramework
 
     . "$PSScriptRoot\..\Resources\NewDSAUser\NewUserDepartmentTable.ps1"
